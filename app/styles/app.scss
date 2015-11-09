@@ -1,0 +1,20 @@
+@import 'ember-paper';
+@import 'bower_components/bootstrap-sass/assets/stylesheets/_bootstrap';
+
+$footerHeight: 40px;
+
+html {
+  min-height: 100%;
+  height: auto;
+}
+
+body {
+  margin-bottom: $footerHeight + 30px;
+  position: static;
+}
+
+body, html {
+  background: #499adc;
+  color: #5ecc6f;
+  //text-shadow: #cc4162
+}
