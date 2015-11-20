@@ -1,7 +1,8 @@
 @import 'bower_components/bootstrap-sass/assets/stylesheets/_bootstrap';
-@import "bower_components/font-awesome/scss/font-awesome";
+@import 'bower_components/font-awesome/scss/font-awesome';
 
-$footerHeight: 40px;
+$footerHeight: 60px;
+$primaryTextColor: #838b91;
 
 html {
   min-height: 100%;
@@ -9,12 +10,75 @@ html {
 }
 
 body {
-  margin-bottom: $footerHeight + 30px;
+  margin-bottom: $footerHeight + 10px;
   position: static;
+  background: #141516;
+  color: $primaryTextColor;
 }
 
-body, html {
-  background: #499adc;
-  color: #5ecc6f;
-  //text-shadow: #cc4162
+.navbar-default {
+  background: inherit;
+  border: none;
+  margin-top: 30px;
+  .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: inherit;
+    background: none;
+  }
+}
+
+#footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $footerHeight;
+  a {
+    color: $primaryTextColor;
+  }
+  a:hover{
+    color: lighten($primaryTextColor, 20%);
+  }
+  ul {
+    margin-right: 10%;
+    li {
+      margin-right: 10px;
+    }
+  }
+}
+
+.fa-linkedin-workaround:before {
+  content: $fa-var-linkedin;
+}
+
+.site-border {
+  position: absolute;
+  background: #202122;
+}
+
+#border-t {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+#border-r {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+}
+
+#border-b {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+#border-l {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20px;
 }
