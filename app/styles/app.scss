@@ -21,7 +21,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 14px;
   h3 {
-    font-size: 20px;
+    font-size: 2.5rem;
     a {
       text-decoration: underline;
     }
@@ -59,6 +59,7 @@ body {
     font-size: 40px;
     transition: all 0.3s ease-in-out;
     line-height: initial;
+    font-family: 'Dancing Script', cursive;
   }
   .navbar-brand:hover {
     color: #FB4545 !important;
@@ -94,6 +95,10 @@ body {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
+}
+
+.initial-position {
+  position: inherit;
 }
 
 .white {
