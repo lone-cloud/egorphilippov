@@ -4,16 +4,28 @@
 $footerHeight: 60px;
 $primaryTextColor: #838b91;
 
+// style largely based on http://www.thenerodesign.com/ from awwwards
+
 html {
   min-height: 100%;
   height: auto;
+  padding: 30px;
+  position: relative;
 }
 
 body {
-  margin-bottom: $footerHeight + 10px;
+  margin-bottom: $footerHeight + 20px;
   position: static;
   background: #141516;
   color: $primaryTextColor;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  h3 {
+    font-size: 20px;
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 
 .navbar-default {
@@ -24,6 +36,75 @@ body {
     color: inherit;
     background: none;
   }
+  .navbar-nav {
+    margin-right: 20px;
+    margin-bottom: 50px;
+    li a {
+      transition: all 0.3s ease-in-out;
+    }
+    li:nth-child(1) a:hover{
+      color: #448CCC !important;
+    }
+    li:nth-child(2) a:hover{
+      color: #7ECC44 !important;
+    }
+    li:nth-child(3) a:hover{
+      color: #A444CC !important;
+    }
+    li:nth-child(4) a:hover{
+      color: #EDFF5B !important;
+    }
+  }
+  .navbar-brand {
+    font-size: 40px;
+    transition: all 0.3s ease-in-out;
+    line-height: initial;
+  }
+  .navbar-brand:hover {
+    color: #FB4545 !important;
+  }
+  a {
+    color: white !important;
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none;
+    padding: 0 !important;
+    margin-right: 15px;
+    font-size: 16px;
+    text-align: center;
+  }
+  // http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
+  a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+.white {
+  color: white !important;
+  text-transform: capitalize;
+}
+
+#hello {
+  color: white !important;
+  font-family: 'Noto Sans', sans-serif;
+  text-transform: uppercase;
 }
 
 #footer {
@@ -32,17 +113,32 @@ body {
   bottom: 0;
   width: 100%;
   height: $footerHeight;
-  a {
-    color: $primaryTextColor;
-  }
-  a:hover{
-    color: lighten($primaryTextColor, 20%);
-  }
   ul {
     margin-right: 10%;
+    li:nth-child(2) a:hover {
+      color: #64CAC5
+    }
+    li:nth-child(3) a:hover {
+      color: #DAAD75;
+    }
     li {
       margin-right: 10px;
+      a {
+        color: $primaryTextColor;
+        transition: all 0.3s ease-in-out;
+      }
+      a:hover{
+        color: lighten($primaryTextColor, 30%);
+      }
+
     }
+  }
+  #findMeOnLabel {
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    bottom: 10px;
   }
 }
 

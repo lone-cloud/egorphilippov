@@ -8,6 +8,9 @@ module.exports = function(defaults) {
     }
   });
 
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js');
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js');
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
