@@ -42,6 +42,18 @@ body {
     li a {
       transition: all 0.3s ease-in-out;
     }
+    li a.active {
+      cursor: default;
+    }
+    li:nth-child(1) a.active{
+      color: #448CCC !important;
+    }
+    li:nth-child(2) a.active{
+      color: #7ECC44 !important;
+    }
+    li:nth-child(3) a.active{
+      color: #A444CC !important;
+    }
     li:nth-child(1) a:hover{
       color: #448CCC !important;
     }
@@ -88,6 +100,10 @@ body {
     transform: scaleX(0);
     -webkit-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
+  }
+  li a.active:before {
+    visibility: visible;
+    transform: scaleX(1);
   }
   a:hover:before {
     visibility: visible;
