@@ -21,7 +21,8 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'font-src': "'self' fonts.gstatic.com",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
-      'script-src': "'self' 'unsafe-inline' www.google-analytics.com"
+      'script-src': "'self' 'unsafe-inline' www.google-analytics.com",
+      'frame-src': "docs.google.com"
     }
   };
 
