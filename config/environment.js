@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'egorphilippov',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -19,9 +19,9 @@ module.exports = function(environment) {
     },
 
     contentSecurityPolicy: {
-      'font-src': "'self' fonts.gstatic.com",
-      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
-      'script-src': "'self' 'unsafe-inline' www.google-analytics.com",
+      'font-src': "'self' fonts.gstatic.com cdn.jsdelivr.net",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com cdn.jsdelivr.net",
+      'script-src': "'self' 'unsafe-inline' www.google-analytics.com cdn.jsdelivr.net",
       'frame-src': "docs.google.com"
     }
   };
