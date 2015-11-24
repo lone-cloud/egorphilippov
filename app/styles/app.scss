@@ -130,6 +130,23 @@ body {
   font-size: 40px;
 }
 
+#projects-page {
+  a {
+    transition: all 0.3s ease-in-out;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .row {
+    border-top: 1px solid white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .row:last-of-type {
+    border-bottom: 1px solid white;
+  }
+}
+
 #footer {
   position: absolute;
   left: 0;
@@ -148,7 +165,7 @@ body {
       margin-right: 10px;
       a {
         color: $primaryTextColor;
-        transition: all 0.3s ease-in-out;
+
       }
       a:hover{
         color: lighten($primaryTextColor, 30%);
@@ -175,7 +192,7 @@ body {
 }
 
 #resume-frame {
-  height: 60vh;
+  height: 70vh;
 }
 
 #border-t {
