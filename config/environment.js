@@ -22,7 +22,7 @@ module.exports = function(environment) {
       'font-src': "'self' fonts.gstatic.com cdn.jsdelivr.net",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com cdn.jsdelivr.net",
       'script-src': "'self' 'unsafe-inline' www.google-analytics.com cdn.jsdelivr.net",
-      'frame-src': "docs.google.com"
+      'frame-src': "'self'"
     }
   };
 
