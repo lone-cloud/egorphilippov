@@ -77,14 +77,13 @@ body {
       color: #EDFF5B !important;
     }
   }
-  .navbar-brand {
-    font-size: 40px;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    line-height: initial;
-  }
-  .navbar-brand:hover {
-    color: #FB4545 !important;
+  .navbar-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    position: relative;
+    top:-35px;
+    border: solid 2px white;
   }
   a {
     color: white !important;
@@ -98,7 +97,7 @@ body {
     text-align: center;
   }
   // http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
-  a:before {
+  .navbar-nav a:before {
     content: "";
     position: absolute;
     width: 100%;
