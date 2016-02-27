@@ -138,7 +138,7 @@ body {
 }
 
 .devicons {
-  font-size: 50px;
+  font-size: 40px;
   margin-right: 5px;
 }
 
@@ -193,6 +193,9 @@ body {
   }
   .row:nth-of-type(5):hover {
     background: rgb(119, 228, 225);
+  }
+  .row:nth-of-type(6):hover {
+    background: rgb(187, 174, 228);
   }
 }
 
