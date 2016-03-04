@@ -84,6 +84,11 @@ body {
     position: relative;
     top:-35px;
     border: solid 2px white;
+    transition-duration: 0.3s;
+  }
+  .navbar-image:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
   a {
     color: white !important;
