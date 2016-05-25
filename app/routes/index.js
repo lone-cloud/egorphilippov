@@ -1,4 +1,7 @@
-import Ember from 'ember';
+import Em from 'ember';
 
-export default Ember.Route.extend({
+export default Em.Route.extend({
+  afterModel(){
+    document.title = 'Egor Philippov';
+  }
 });
