@@ -9,7 +9,8 @@ $primaryTextColor: #838b91;
 html {
   min-height: 100%;
   height: auto;
-  padding: 30px;
+  padding: 5%;
+  padding-top: 30px;
   position: relative;
 }
 
@@ -24,6 +25,13 @@ body {
     a {
       text-decoration: underline;
     }
+  }
+}
+
+.navbar-toggle {
+  margin-right: 0;
+  &:focus, &:hover {
+    background-color: lighten(black, 12%) !important;
   }
 }
 
