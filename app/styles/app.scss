@@ -31,7 +31,7 @@ body {
 .navbar-toggle {
   margin-right: 0;
   &:focus, &:hover {
-    background-color: lighten(black, 12%) !important;
+    background-color: lighten(black, 15%) !important;
   }
 }
 
@@ -54,8 +54,6 @@ body {
     background: none;
   }
   .navbar-nav {
-    margin-right: 20px;
-    margin-bottom: 50px;
     li a {
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
@@ -105,7 +103,7 @@ body {
     position: relative;
     text-decoration: none;
     padding: 0 !important;
-    margin-right: 15px;
+    margin: 0 15px;
     font-size: 16px;
     text-align: center;
   }
