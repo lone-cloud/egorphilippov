@@ -7,7 +7,7 @@ const {
 export default Component.extend({
   actions: {
     emailMe(){
-      window.location.href = "mailto:philippovegor@gmail.com?subject=Hello Egor!";
+      window.open("mailto:philippovegor@gmail.com?subject=Hello Egor!", '_blank');
     }
   }
 });
