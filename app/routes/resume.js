@@ -1,7 +1,9 @@
-import Em from 'ember';
+import Ember from 'ember';
 
-export default Em.Route.extend({
-  afterModel(){
+const { Route } = Ember;
+
+export default Route.extend({
+  afterModel() {
     document.title = 'Resumé';
   }
 });
