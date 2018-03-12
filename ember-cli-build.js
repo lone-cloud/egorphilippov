@@ -1,15 +1,18 @@
-/* global require, module */
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+'use strict';
+
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
-  var app = new EmberApp({
+  let app = new EmberApp(defaults, {
     'ember-font-awesome': {
+      fontFormats: ['woff2'],
+      removeUnusedIcons: EmberApp.env() === 'production',
       useScss: true
     }
   });
 
-  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js');
-  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js');
+  app.import('node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js');
+  app.import('node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js');
 
   return app.toTree();
 };

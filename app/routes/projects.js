@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
-  afterModel(){
+export default Route.extend({
+  afterModel() {
     document.title = 'Projects';
   }
 });
