@@ -1,0 +1,40 @@
+#footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $footerHeight;
+  ul {
+    margin-right: 10%;
+    li:nth-child(2) a:hover {
+      color: #64CAC5
+    }
+    li:nth-child(3) a:hover {
+      color: #DAAD75;
+    }
+    li:nth-child(4) a:hover {
+      color: #da8767;
+    }
+    li:nth-child(5) a:hover {
+      color: #da8767;
+    }
+    li {
+      margin-right: 10px;
+      a {
+        color: $primaryTextColor;
+
+      }
+      a:hover{
+        color: lighten($primaryTextColor, 30%);
+      }
+
+    }
+  }
+  #findMeOnLabel {
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    bottom: 10px;
+  }
+}

@@ -1,0 +1,57 @@
+#projects-page {
+  font-size: 16px;
+  .project-title {
+    font-size: 18px;
+  }
+  .project-desc {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  a {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    color: darken(white, 15%);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .row {
+    border-top: 1px solid white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+  }
+  .row:last-of-type {
+    border-bottom: 1px solid white;
+  }
+  .row:hover {
+    color: #373737;
+    a {
+      color: lighten(black, 20%) !important;
+    }
+    a:hover {
+      color: black !important;
+    }
+  }
+  .row:nth-of-type(1):hover {
+    background: rgb(124, 156, 228);
+  }
+  .row:nth-of-type(2):hover {
+    background: rgb(111, 228, 128);
+  }
+  .row:nth-of-type(3):hover {
+    background: rgb(228, 227, 138);
+  }
+  .row:nth-of-type(4):hover {
+    background: rgb(228, 170, 220);
+  }
+  .row:nth-of-type(5):hover {
+    background: rgb(119, 228, 225);
+  }
+  .row:nth-of-type(6):hover {
+    background: rgb(187, 174, 228);
+  }
+}

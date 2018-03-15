@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "ember build --env=production",
-    "start": "ember server"
+    "start": "ember server --port=4201"
   },
   "repository": "",
   "engines": {

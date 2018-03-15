@@ -4,6 +4,11 @@
 $footerHeight: 60px;
 $primaryTextColor: #838b91;
 
+@import 'font-awesome';
+@import 'projects';
+@import 'navbar';
+@import 'footer';
+
 // style largely based on http://www.thenerodesign.com/ from awwwards
 
 html {
@@ -28,13 +33,6 @@ body {
   }
 }
 
-.navbar-toggle {
-  margin-right: 0;
-  &:focus, &:hover {
-    background-color: lighten(black, 15%) !important;
-  }
-}
-
 // response font sizes
 @media (max-width: $screen-sm-max) {
   body h3{font-size: 20px;}
@@ -43,93 +41,6 @@ body {
 @media (max-width: $screen-xs-max) {
   body h3{font-size: 16px;}
   #projects-page{font-size: 12px !important;}
-}
-
-.navbar-default {
-  background: inherit;
-  border: none;
-  margin-top: 30px;
-  .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: inherit;
-    background: none;
-  }
-  .navbar-nav {
-    li a {
-      -webkit-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-    }
-    li a.active {
-      cursor: default;
-    }
-    li:nth-child(1) a.active{
-      color: #448CCC !important;
-    }
-    li:nth-child(2) a.active{
-      color: #7ECC44 !important;
-    }
-    li:nth-child(3) a.active{
-      color: #A444CC !important;
-    }
-    li:nth-child(1) a:hover{
-      color: #448CCC !important;
-    }
-    li:nth-child(2) a:hover{
-      color: #7ECC44 !important;
-    }
-    li:nth-child(3) a:hover{
-      color: #A444CC !important;
-    }
-    li:nth-child(4) a:hover{
-      color: #EDFF5B !important;
-    }
-  }
-  .navbar-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 60px;
-    position: relative;
-    top:-35px;
-    border: solid 2px white;
-    transition-duration: 0.3s;
-  }
-  .navbar-image:hover {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  a {
-    color: white !important;
-    font-family: 'Noto Sans', sans-serif;
-    text-transform: uppercase;
-    position: relative;
-    text-decoration: none;
-    padding: 0 !important;
-    margin: 0 15px;
-    font-size: 16px;
-    text-align: center;
-  }
-  // http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
-  .navbar-nav a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-  }
-  li a.active:before {
-    visibility: hidden !important;
-  }
-  a:hover:before {
-    visibility: visible;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-  }
 }
 
 .initial-position {
@@ -153,105 +64,9 @@ body {
   margin-right: 5px;
 }
 
-#projects-page {
-  font-size: 16px;
-  .project-title {
-    font-size: 18px;
-  }
-  .project-desc {
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  a {
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    color: darken(white, 15%);
-    font-weight: bold;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: none;
-  }
-  .row {
-    border-top: 1px solid white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-  }
-  .row:last-of-type {
-    border-bottom: 1px solid white;
-  }
-  .row:hover {
-    color: #373737;
-    a {
-      color: lighten(black, 20%) !important;
-    }
-    a:hover {
-      color: black !important;
-    }
-  }
-  .row:nth-of-type(1):hover {
-    background: rgb(124, 156, 228);
-  }
-  .row:nth-of-type(2):hover {
-    background: rgb(111, 228, 128);
-  }
-  .row:nth-of-type(3):hover {
-    background: rgb(228, 227, 138);
-  }
-  .row:nth-of-type(4):hover {
-    background: rgb(228, 170, 220);
-  }
-  .row:nth-of-type(5):hover {
-    background: rgb(119, 228, 225);
-  }
-  .row:nth-of-type(6):hover {
-    background: rgb(187, 174, 228);
-  }
-}
-
 .vcenter {
   display: flex;
   align-items: center;
-}
-
-#footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: $footerHeight;
-  ul {
-    margin-right: 10%;
-    li:nth-child(2) a:hover {
-      color: #64CAC5
-    }
-    li:nth-child(3) a:hover {
-      color: #DAAD75;
-    }
-    li:nth-child(4) a:hover {
-      color: #da8767;
-    }
-    li {
-      margin-right: 10px;
-      a {
-        color: $primaryTextColor;
-
-      }
-      a:hover{
-        color: lighten($primaryTextColor, 30%);
-      }
-
-    }
-  }
-  #findMeOnLabel {
-    font-family: 'Noto Sans', sans-serif;
-    text-transform: uppercase;
-    color: white;
-    position: relative;
-    bottom: 10px;
-  }
 }
 
 .fa-linkedin-workaround:before {
