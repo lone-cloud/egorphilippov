@@ -4,37 +4,44 @@
   bottom: 0;
   width: 100%;
   height: $footerHeight;
+
   ul {
     margin-right: 10%;
+
     li:nth-child(2) a:hover {
-      color: #64CAC5
+      color: #64cac5;
     }
+
     li:nth-child(3) a:hover {
-      color: #DAAD75;
+      color: #daad75;
     }
+
     li:nth-child(4) a:hover {
       color: #da8767;
     }
+
     li:nth-child(5) a:hover {
       color: #da8767;
     }
+
     li {
-      margin-right: 10px;
+      margin-right: $padding;
+
       a {
         color: $primaryTextColor;
 
+        &:hover {
+          color: lighten($primaryTextColor, 30%);
+        }
       }
-      a:hover{
-        color: lighten($primaryTextColor, 30%);
-      }
-
     }
   }
-  #findMeOnLabel {
+
+  #find-me-on-label {
     font-family: 'Noto Sans', sans-serif;
     text-transform: uppercase;
     color: white;
     position: relative;
-    bottom: 10px;
+    bottom: $padding/2;
   }
 }

@@ -1,8 +1,9 @@
 @import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
 @import 'font-awesome';
 
-$footerHeight: 60px;
+$footerHeight: 6rem;
 $primaryTextColor: #838b91;
+$padding: 1rem;
 
 @import 'font-awesome';
 @import 'projects';
@@ -15,17 +16,18 @@ html {
   min-height: 100%;
   height: auto;
   padding: 5%;
-  padding-top: 30px;
+  padding-top: 3 * $padding;
   position: relative;
 }
 
 body {
-  margin-bottom: $footerHeight + 20px;
+  margin-bottom: $footerHeight + 2 * $padding;
   position: static;
   background: #141516;
   color: $primaryTextColor;
   font-family: 'Playfair Display', serif;
   font-size: 14px;
+
   h3 {
     a {
       text-decoration: underline;
@@ -35,12 +37,23 @@ body {
 
 // response font sizes
 @media (max-width: $screen-sm-max) {
-  body h3{font-size: 20px;}
-  #projects-page{font-size: 14px !important;}
+  body h3 {
+    font-size: 20px;
+  }
+
+  #projects-page {
+    font-size: 14px !important;
+  }
 }
+
 @media (max-width: $screen-xs-max) {
-  body h3{font-size: 16px;}
-  #projects-page{font-size: 12px !important;}
+  body h3 {
+    font-size: 16px;
+  }
+
+  #projects-page {
+    font-size: 12px !important;
+  }
 }
 
 .initial-position {
@@ -61,7 +74,7 @@ body {
 
 .devicons {
   font-size: 40px;
-  margin-right: 5px;
+  margin-right: $padding/2;
 }
 
 .vcenter {
@@ -86,28 +99,28 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 20px;
+  height: 2 * $padding;
 }
 
 #border-r {
   top: 0;
   bottom: 0;
   right: 0;
-  width: 20px;
+  width: 2 * $padding;
 }
 
 #border-b {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 20px;
+  height: 2 * $padding;
 }
 
 #border-l {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 20px;
+  width: 2 * $padding;
 }
 
 .success-sent {

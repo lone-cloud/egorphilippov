@@ -8,6 +8,15 @@ module.exports = function (defaults) {
       fontFormats: ['woff2'],
       removeUnusedIcons: EmberApp.env() === 'production',
       useScss: true
+    },
+    fingerprint: {
+      exclude: [
+        'android-chrome-192x192.png',
+        'apple-touch-icon.png',
+        'favicon-16x16.png',
+        'favicon-32x32.png',
+        'mstile-150x150.png'
+      ]
     }
   });
 

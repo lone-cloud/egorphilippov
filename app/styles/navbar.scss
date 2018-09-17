@@ -1,36 +1,41 @@
 .navbar-default {
   background: inherit;
   border: none;
-  margin-top: 30px;
-  .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  margin-top: 3 * $padding;
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
     color: inherit;
     background: none;
   }
   .navbar-nav {
     li a {
-      -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
     }
     li a.active {
       cursor: default;
     }
     li:nth-child(1) {
-      a.active, a:hover{
-        color: #448CCC !important;
+      a.active,
+      a:hover {
+        color: #448ccc !important;
       }
     }
     li:nth-child(2) {
-      a.active, a:hover{
-        color: #7ECC44 !important;
+      a.active,
+      a:hover {
+        color: #7ecc44 !important;
       }
     }
     li:nth-child(3) {
-      a.active, a:hover{
-        color: #A444CC !important;
+      a.active,
+      a:hover {
+        color: #a444cc !important;
       }
     }
     li:nth-child(4) {
-      a.active, a:hover{
+      a.active,
+      a:hover {
         color: #f1ed2f !important;
       }
     }
@@ -40,12 +45,11 @@
     height: 120px;
     border-radius: 60px;
     position: relative;
-    top:-35px;
+    top: -35px;
     border: solid 2px white;
     transition-duration: 0.3s;
   }
   .navbar-image:hover {
-    -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
   a {
@@ -61,7 +65,7 @@
   }
   // http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
   .navbar-nav a:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
@@ -69,9 +73,7 @@
     left: 0;
     background-color: white;
     visibility: hidden;
-    -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
   }
   li a.active:before {
@@ -79,14 +81,14 @@
   }
   a:hover:before {
     visibility: visible;
-    -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
 }
 
 .navbar-toggle {
   margin-right: 0;
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     background-color: lighten(black, 15%) !important;
   }
 }
