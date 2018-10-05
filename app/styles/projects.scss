@@ -26,11 +26,6 @@
     padding: 2 * $padding;
     transition: all 0.3s ease-in-out;
 
-    .store-badges {
-      display: flex;
-      align-items: center;
-    }
-
     .project-screens {
       display: flex;
       justify-content: space-around;
@@ -97,7 +92,11 @@
   #projects-page .highlighted-row {
     .store-badges {
       flex-direction: column;
-      align-items: flex-start;
+
+      .chrome-store-icon {
+        display: block;
+        padding-left: $padding;
+      }
 
       .app-store-icon {
         padding-left: 0.7rem;
@@ -106,7 +105,10 @@
 
     .project-screens {
       flex-direction: column;
-      align-items: flex-start;
+
+      div {
+        text-align: center;
+      }
 
       img {
         margin-top: $padding/2;
