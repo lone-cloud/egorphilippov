@@ -1,7 +1,7 @@
 .navbar-default {
   background: inherit;
   border: none;
-  margin-top: 3 * $padding;
+  margin-top: 4 * $padding;
   .navbar-nav > .active > a,
   .navbar-nav > .active > a:hover,
   .navbar-default .navbar-nav > .active > a:focus {
@@ -50,7 +50,7 @@
     transition-duration: 0.3s;
   }
   .navbar-image:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   a {
     color: white !important;
