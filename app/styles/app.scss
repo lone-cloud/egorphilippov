@@ -87,8 +87,12 @@ body {
   background: #202122;
 }
 
-#resume-frame {
-  height: 70vh;
+.resume-frame {
+  height: 80vh;
+
+  @media (max-width: $screen-xs-max) {
+    height: 50vh;
+  }
 }
 
 #border-t {
