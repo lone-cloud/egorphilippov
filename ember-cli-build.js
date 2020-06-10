@@ -7,7 +7,7 @@ module.exports = function (defaults) {
     'ember-font-awesome': {
       fontFormats: ['woff2'],
       removeUnusedIcons: EmberApp.env() === 'production',
-      useScss: true
+      useScss: true,
     },
     fingerprint: {
       exclude: [
@@ -15,9 +15,10 @@ module.exports = function (defaults) {
         'apple-touch-icon.png',
         'favicon-16x16.png',
         'favicon-32x32.png',
-        'mstile-150x150.png'
-      ]
-    }
+        'mstile-150x150.png',
+        'me.jpg',
+      ],
+    },
   });
 
   app.import('node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js');
