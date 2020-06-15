@@ -3,14 +3,14 @@ import EmberRouter from '@ember/routing/router';
 
 const Router = EmberRouter.extend({
   location: config.locationType,
-  rootURL: config.rootURL
+  rootURL: config.rootURL,
 });
 
-Router.map(function() {
+Router.map(function () {
   this.route('projects');
   this.route('resume');
   this.route('contact');
-  this.route('thanks');
+  this.route('success');
 });
 
 export default Router;
