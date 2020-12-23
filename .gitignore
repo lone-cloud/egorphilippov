@@ -1,25 +1,23 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# compiled output
-/dist
-/tmp
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
-/bower_components
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
-npm-debug.log*
-yarn-error.log
-testem.log
+# testing
+/coverage
 
-# ember-try
-.node_modules.ember-try/
-bower.json.ember-try
-package.json.ember-try
-/.idea/
-/.DS_Store
+# next.js
+/.next/
+
+# production
+/build
+
+# debug
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+/_next
+/out
+/.next-deploy
+/.next-deploy-build
