@@ -127,7 +127,7 @@ const ImgLogo = styled.img`
   width: 3.75rem;
   height: 3.75rem;
   border-radius: 3.75rem;
-  border: 2px solid #fff;
+  border: 2px solid ${({ theme }) => theme.colors.white};
   transition-duration: 0.3s;
 
   :focus,

@@ -82,7 +82,7 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 `;
 const FindMeText = styled.span`
   text-transform: uppercase;
-  margin-right: 1rem;
+  margin-right: ${({ theme }) => theme.spacing.medium};
   font-weight: 600;
   font-size: 0.9em;
 `;
@@ -107,7 +107,13 @@ const FindMeLinks = styled.div`
   align-items: center;
 
   a {
-    color: inherit;
+    color: ${({ theme }) => theme.colors.black};
+    transition: all 200ms;
+
+    :focus,
+    :hover {
+      color: ${({ theme }) => darken(0.05, theme.colors.brand)};
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {

@@ -44,8 +44,6 @@ const HomeContainer = styled.div`
 `;
 const PageBody = styled.div`
   font-size: 1.25em;
-  margin-top: 5vh;
-  margin-bottom: 6vh;
   line-height: 1.5;
   margin: 0 15vw;
 

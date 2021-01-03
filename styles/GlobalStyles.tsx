@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { Reset } from 'styled-reset';
 import { darken } from 'polished';
 
-import { COLOR_BRAND } from 'styles/theme';
+import { COLOR_BRAND, COLOR_BLACK } from 'styles/theme';
 
 export const GlobalStyle = createGlobalStyle`  
   #__next {
@@ -11,9 +11,11 @@ export const GlobalStyle = createGlobalStyle`
   }
   html, body {
     font-family: 'Roboto', sans-serif;
+    color: ${COLOR_BLACK}
   }
   a {
       color: ${COLOR_BRAND};
+      transition: all 200ms;
 
       :focus, :hover {
         color: ${darken(0.05, COLOR_BRAND)};

@@ -20,7 +20,7 @@ const Success: NextPage = () => {
 
 const ThanksTitleContainer = styled.div`
   display: flex;
-  height: 70vh;
+  height: 60vh;
   align-items: center;
   justify-content: center;
 `;

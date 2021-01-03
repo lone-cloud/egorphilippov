@@ -17,7 +17,7 @@ const Contact: NextPage = () => {
         <title>Contact | Egor Philippov</title>
       </Head>
 
-      <form action="https://formspree.io/philippovegor@gmail.com" method="POST">
+      <ContactForm action="https://formspree.io/philippovegor@gmail.com" method="POST">
         <FormGroup>
           <FormLabel htmlFor="email">Email</FormLabel>
           <EmailInput
@@ -43,11 +43,18 @@ const Contact: NextPage = () => {
         <Button disabled={!isSubmitEnabled} type="submit">
           Submit
         </Button>
-      </form>
+      </ContactForm>
     </Container>
   );
 };
 
+const ContactForm = styled.form`
+  margin: 0 10vw;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin: 0 3vw;
+  }
+`;
 const formControl = css`
   display: block;
   height: calc(1.5em + 0.75rem + 2px);
