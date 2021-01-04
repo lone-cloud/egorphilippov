@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
         color: ${darken(0.05, COLOR_BRAND)};
       }
   }
+
   .page-transition-enter {
     opacity: 0;
   }
