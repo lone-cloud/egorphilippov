@@ -17,7 +17,8 @@ const Home: NextPage = () => {
         </PageSection>
 
         <PageSection>
-          I am always looking for exciting new opportunities (✔️ remote ❌ recruiters/agencies).
+          I am always looking for exciting new opportunities (✔️ remote ✔️ contract ❌
+          recruiters/agencies).
           <br />
           Feel free to{' '}
           <Link href="/contact" passHref>
