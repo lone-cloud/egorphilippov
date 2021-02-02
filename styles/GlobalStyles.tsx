@@ -6,13 +6,19 @@ import { darken } from 'polished';
 import { COLOR_BRAND, COLOR_BLACK } from 'styles/theme';
 
 export const GlobalStyle = createGlobalStyle`  
+  html {
+     scroll-behavior: smooth;
+  }
+
   #__next {
     font-family: 'Roboto', sans-serif;
   }
+
   html, body {
     font-family: 'Roboto', sans-serif;
     color: ${COLOR_BLACK}
   }
+  
   a {
       color: ${COLOR_BRAND};
       transition: all 200ms;
