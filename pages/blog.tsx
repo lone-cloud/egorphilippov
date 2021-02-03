@@ -12,6 +12,16 @@ const Clients: NextPage = () => {
       </Head>
 
       <BlogContainer>
+        <BlogIndex>
+          <BlogIndexYear>
+            <YearTitle>2021</YearTitle>
+            <BlogEntryLink href="#huegasm-is-free">
+              Huegasm is now free and a look into the future...
+            </BlogEntryLink>
+            <BlogEntryLink href="#good-night-sweet-tomati">Good night, sweet Tomati</BlogEntryLink>
+          </BlogIndexYear>
+        </BlogIndex>
+
         <BlogEntry id="huegasm-is-free">
           <EntryTitle>Huegasm is now free and a look into the future...</EntryTitle>
           <EntryDate>Feb. 2, 2021</EntryDate>
@@ -99,6 +109,22 @@ const Clients: NextPage = () => {
   );
 };
 
+const BlogEntryLink = styled.a`
+  display: block;
+  margin-bottom: ${({ theme }) => theme.spacing.small};
+`;
+const BlogIndex = styled.div`
+  border: 1px solid ${({ theme }) => theme.colors.brand};
+  border-radius: 0.25rem;
+  padding: ${({ theme }) => theme.spacing.medium};
+  margin-bottom: ${({ theme }) => theme.spacing.large};
+`;
+const BlogIndexYear = styled.div`
+  font-size: 0.9em;
+`;
+const YearTitle = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacing.small};
+`;
 const Italic = styled.span`
   font-style: italic;
 `;
