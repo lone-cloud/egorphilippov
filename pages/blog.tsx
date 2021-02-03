@@ -16,19 +16,20 @@ const Clients: NextPage = () => {
           <EntryTitle>Huegasm is now free and a look into the future...</EntryTitle>
           <EntryDate>Feb. 2, 2021</EntryDate>
           <EntryBody>
-            About 5 years ago I started my first serious hobby project to create an app to
-            synchronize my music to the smart Philips Hue light bulbs in my living room.{' '}
+            About 5 years ago I moved to a new apartment and wanted to synchronize my music to the
+            smart light bulbs in my living room.{' '}
             <a target="blank" href="http://www.huegasm.com/">
               And so Huegasm was born.
             </a>{' '}
-            Its best iteration came in the form of a{' '}
+            Originally developed solely as a web app for synchronizing music to Philips Hue lights,
+            its best iteration came in the form of a{' '}
             <a
               target="blank"
               href="https://chrome.google.com/webstore/detail/huegasm-for-philips-hue-l/mbjanbdhcpohhfecjgbdpcfhnnbofooj"
             >
               Chrome browser extension
             </a>{' '}
-            that, as of today, I am now offering for free!
+            that, as of today, I am offering for free!
             <Spacer />
             Why the sudden generosity? The Chrome browser{' '}
             <a
@@ -39,20 +40,21 @@ const Clients: NextPage = () => {
             </a>
             . The $ that the extension brings in monthly is not worth the trouble of trying to
             migrate users to a new payment system, especially given that Chrome will not allow
-            exporting of licensing data. The other big benefit for the user is that they&apos;ll now
-            be able to load Huegasm from any other browser that supports extension. Chromium-based
-            browsers like Brave should now start working with Huegasm which is awesome.
+            exporting of its licensing data. The other big benefit for the user is that they&apos;ll
+            now be able to load Huegasm from any other browser that supports extension.
+            Chromium-based browsers like Brave should now start working with Huegasm which is
+            awesome.
             <Spacer />
-            Huegasm was my first real software engineering project outside of work and it was a
-            fantastic learning experience. Time has shown me the importance of a need for a more
-            thought-out business model which would encourage me to provide more updates and support
-            for the future. A one time fee, such that I had with Huegasm, is not a worthwhile time
-            investment. Of course, all mistakes can be forgiven in the world of business with a
-            stellar marketing execution.
+            Huegasm was my first real software engineering project outside of my usual client
+            projects and it it has been a fantastic learning experience. It has shown me the
+            importance of a need for a more thought-out business model which would encourage me to
+            provide more updates and support for the future. A one time fee, which was the case with
+            Huegasm, is just not a worthwhile time investment. Of course, all mistakes can be
+            forgiven in the world of business with a stellar marketing execution.
             <Spacer />
             As I continue to move forward, I want to explore the benefits of creating &quot;long
             tail&quot; web sites. I must minimize the time spent working on platforms (ex. iOS,
-            Android, Hue) which always heavily aim to restrict, monetize and control me.
+            Android, Hue) which tend to end up restricting, monetizing and controlling me.
           </EntryBody>
         </BlogEntry>
 
@@ -117,6 +119,7 @@ const EntryTitle = styled.h2`
   font-size: 1.2em;
 `;
 const EntryDate = styled.p`
+  margin-top: ${({ theme }) => theme.spacing.small};
   font-size: 0.9em;
 `;
 const BlogContainer = styled.div`
