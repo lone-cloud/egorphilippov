@@ -58,7 +58,12 @@ const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
           <FindMeLinks>
             <FindMeText>- Find me on</FindMeText>
 
-            <a href="https://github.com/lone-cloud" rel="noreferrer" target="_blank">
+            <a
+              href="https://github.com/lone-cloud"
+              rel="noreferrer"
+              target="_blank"
+              aria-label="GitHub"
+            >
               <StyledFontAwesomeIcon icon={faGithub} size="2x" />
             </a>
 
@@ -66,6 +71,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
               href="https://ca.linkedin.com/in/egor-philippov-1482207b"
               rel="noreferrer"
               target="_blank"
+              aria-label="LinkedIn"
             >
               <StyledFontAwesomeIcon icon={faLinkedin} size="2x" />
             </a>
