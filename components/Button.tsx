@@ -12,7 +12,7 @@ interface Props {
 
 function ButtonComponent({ children, onClick, ...props }: Props, ref: Ref<HTMLButtonElement>) {
   return (
-    // @ts-ignore
+    // @ts-ignore TODO improve typing
     <StyledButton ref={ref} onClick={onClick} {...props}>
       {children}
     </StyledButton>

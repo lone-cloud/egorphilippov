@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { AppProps } from 'next/app';
 import Router from 'next/router';
 import Head from 'next/head';
-import styled from 'styled-components';
 import ReactGA from 'react-ga';
 import { PageTransition } from 'next-page-transitions';
 import { NextPage } from 'next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { darken } from 'polished';
-
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+
 config.autoAddCss = false;
 
 import { GlobalStyles, theme } from 'styles';
@@ -137,9 +136,11 @@ const ForgedLinkContainer = styled.div`
 const ForgedLink = styled.a`
   color: ${({ theme }) => theme.colors.nidratech};
 
-  :focus,
-  :hover {
-    color: ${({ theme }) => darken(0.05, theme.colors.nidratech)};
+  a {
+    :hover,
+    :focus {
+      color: ${({ theme }) => darken(0.05, theme.colors.nidratech)};
+    }
   }
 `;
 
