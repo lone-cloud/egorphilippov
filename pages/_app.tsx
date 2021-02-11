@@ -109,6 +109,14 @@ const StyledFooter = styled.footer`
   padding: ${({ theme }) => theme.spacing.large};
   flex-direction: column;
 `;
+const ForgedLink = styled.a`
+  color: ${({ theme }) => theme.colors.nidratech};
+
+  :hover,
+  :focus {
+    color: ${({ theme }) => darken(0.05, theme.colors.nidratech)};
+  }
+`;
 const FindMeLinks = styled.div`
   align-self: flex-end;
   margin: 0 20vw;
@@ -132,16 +140,6 @@ const FindMeLinks = styled.div`
 const ForgedLinkContainer = styled.div`
   margin-top: 2rem;
   align-self: center;
-`;
-const ForgedLink = styled.a`
-  color: ${({ theme }) => theme.colors.nidratech};
-
-  a {
-    :hover,
-    :focus {
-      color: ${({ theme }) => darken(0.05, theme.colors.nidratech)};
-    }
-  }
 `;
 
 export default App;
