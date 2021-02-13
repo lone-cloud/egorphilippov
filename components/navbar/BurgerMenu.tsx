@@ -5,7 +5,7 @@ interface Props {
   setIsNavbarOpen: (...args: any[]) => void;
 }
 
-const BurgerMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props) => {
+const BurgerMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props): JSX.Element => {
   return (
     <Wrapper onClick={() => setIsNavbarOpen(!isNavbarOpen)}>
       <div id="menu-toggle" className={isNavbarOpen ? 'open' : ''}>

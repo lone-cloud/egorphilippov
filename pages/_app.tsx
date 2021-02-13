@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { AppProps } from 'next/app';
 import Router from 'next/router';

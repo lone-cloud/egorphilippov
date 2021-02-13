@@ -10,7 +10,7 @@ interface Props {
   setIsNavbarOpen: (...args: any[]) => void;
 }
 
-const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props) => {
+const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props): JSX.Element => {
   const { pathname } = useRouter();
   const ref = useRef(null);
 
