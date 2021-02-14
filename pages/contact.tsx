@@ -40,7 +40,7 @@ const Contact: NextPage = () => {
 
         <input type="hidden" name="_next" value="https://www.egorphilippov.me/success" />
 
-        <Button disabled={!isSubmitEnabled} type="submit">
+        <Button isDisabled={!isSubmitEnabled} type="submit">
           Submit
         </Button>
       </ContactForm>
