@@ -1,15 +1,17 @@
-import Head from 'next/head';
 import { NextPage } from 'next';
 import styled from 'styled-components';
+import { NextSeo } from 'next-seo';
 
 import { Container } from 'components';
 
 const Clients: NextPage = () => {
   return (
     <Container>
-      <Head>
-        <title>Blog | Egor Philippov</title>
-      </Head>
+      <NextSeo
+        title="Blog | Egor Philippov"
+        description="A personal blog of Egor Philippov."
+        canonical="https://www.egorphilippov.me/blog"
+      />
 
       <BlogContainer>
         <BlogIndex>

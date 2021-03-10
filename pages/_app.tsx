@@ -36,8 +36,6 @@ const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
     <ThemeProvider theme={theme}>
       <Head>
         <title>Egor Philippov</title>
-        <meta name="description" content="The personal site of Egor Philippov." />
-        <meta name="keywords" content="Egor,Philippov" />
         <meta name="author" content="Egor Philippov" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

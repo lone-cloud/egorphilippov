@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Head from 'next/head';
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 import { NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 
 import { Button, Container } from 'components';
 
@@ -13,9 +13,11 @@ const Contact: NextPage = () => {
 
   return (
     <Container>
-      <Head>
-        <title>Contact | Egor Philippov</title>
-      </Head>
+      <NextSeo
+        title="Contact | Egor Philippov"
+        description="A contact form for Egor Philippov."
+        canonical="https://www.egorphilippov.me/contact"
+      />
 
       <ContactForm action="https://formspree.io/philippovegor@gmail.com" method="POST">
         <FormGroup>

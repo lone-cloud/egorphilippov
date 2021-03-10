@@ -1,15 +1,17 @@
-import Head from 'next/head';
 import styled from 'styled-components';
 import { NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 
 import { Container } from 'components';
 
 const Clients: NextPage = () => {
   return (
     <Container>
-      <Head>
-        <title>Resumé | Egor Philippov</title>
-      </Head>
+      <NextSeo
+        title="Resumé | Egor Philippov"
+        description="The resumé of Egor Philippov."
+        canonical="https://www.egorphilippov.me/resume"
+      />
 
       <ResumeContainer data="/resume.pdf" width="100%" type="application/pdf">
         <iframe

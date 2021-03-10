@@ -1,14 +1,22 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 
 const Home: NextPage = () => {
   return (
     <HomeContainer>
+      <NextSeo
+        title="Egor Philippov"
+        description="The personal site of Egor Philippov."
+        canonical="https://www.egorphilippov.me"
+      />
+
       <PageBody>
         <PageSection>
           <HelloText>- Hello</HelloText>
         </PageSection>
+
         <PageSection>
           Is it me you&apos;re looking for? My name is{' '}
           <HighlightedText>Egor Philippov</HighlightedText> and I&apos;m a passionate{' '}

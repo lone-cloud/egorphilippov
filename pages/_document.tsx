@@ -49,20 +49,6 @@ class Document extends NextDocument {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <meta name="msapplication-TileColor" content="#1d7eb1" />
           <meta name="theme-color" content="#ffffff" />
-
-          <meta name="description" content="Personal website of Egor Philippov" />
-          <meta
-            name="keywords"
-            content="egor,philippov,huegasm,tomati,web,mobile,chrome,extension,tech,consulting"
-          />
-
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Egor Philippov" />
-          <meta property="og:description" content="Personal website of Egor Philippov" />
-          <meta property="og:image:width" content="800" />
-          <meta property="og:image:height" content="600" />
-          <meta property="og:locale" content="en_US" />
-          <meta property="og:site_name" content="Egor Philippov" />
         </Head>
 
         <body>
