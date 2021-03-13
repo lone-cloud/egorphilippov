@@ -10,6 +10,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { darken } from 'polished';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import { DefaultSeo } from 'next-seo';
+
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 config.autoAddCss = false;
@@ -34,6 +36,20 @@ const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
 
   return (
     <ThemeProvider theme={theme}>
+      <DefaultSeo
+        openGraph={{
+          type: 'website',
+          locale: 'en_US',
+          images: [
+            {
+              url: 'https://www.egorphilippov.me/images/logo-xl.jpg',
+              width: 496,
+              height: 496,
+            },
+          ],
+        }}
+      />
+
       <Head>
         <title>Egor Philippov</title>
 

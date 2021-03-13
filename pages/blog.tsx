@@ -10,7 +10,7 @@ const Clients: NextPage = () => {
     <Container>
       <NextSeo
         title="Blog | Egor Philippov"
-        description="A personal blog of Egor Philippov."
+        description="The personal blog of Egor Philippov."
         canonical="https://www.egorphilippov.me/blog"
       />
 
