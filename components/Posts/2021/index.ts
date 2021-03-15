@@ -3,12 +3,10 @@ import huegasmIsFree, { meta as huegasmIsFreeMeta } from './huegasm-is-free';
 import theRiseOfTheLongTailedBeast, {
   meta as theRiseOfTheLongTailedBeastMeta,
 } from './the-rise-of-the-long-tailed-beast';
-import theStateOfModernWebDevelopment, {
-  meta as theStateOfModernWebDevelopmentMeta,
-} from './the-state-of-modern-web-development';
+import theStateOfModernWebDevelopment, { meta as spillingTheBeansMeta } from './spilling-the-beans';
 
 export const metas = [
-  theStateOfModernWebDevelopmentMeta,
+  spillingTheBeansMeta,
   theRiseOfTheLongTailedBeastMeta,
   goodNightSweetTomatiMeta,
   huegasmIsFreeMeta,

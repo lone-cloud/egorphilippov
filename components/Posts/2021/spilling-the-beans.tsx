@@ -12,8 +12,8 @@ function Post(): JSX.Element {
       <EntryTitle>{meta.title}</EntryTitle>
       <EntryDate>{meta.date}</EntryDate>
       <EntryBody>
-        It&apos;s now 2021 which means that I have been a professional software engineer for over 10
-        years. Having also spent thousands of hours outside of work: reading, practicing, and
+        It&apos;s now 2021, which means that I have been a professional software engineer for over
+        10 years. Having also spent thousands of hours outside of work reading, practicing, and and
         tinkering, I now consider myself a master of the craft. As such, I consider it my duty to
         try to put into words what I have learned so far in my tech career. It&apos;s time to spill
         the beans. I will attempt to describe exactly what I think it takes to create a masterful
@@ -24,7 +24,7 @@ function Post(): JSX.Element {
             <SubTitle>Tooling</SubTitle>I think it&apos;s safe to say that software has become
             immensely complicated. For any given technology, there is a wide array of best
             practices, standards and idiomatic ways of doing things. Once you learn one, another
-            pattern comes along and you might have to revaluate the way you were doing things
+            pattern comes along and you might have to reevaluate the way you were doing things
             previously. To help us mortals stay on course it is highly advisable to rely on tools to
             nudge us in the right direction. The web community is great for tooling and below is my
             current, go-to toolkit:
@@ -116,9 +116,8 @@ function Post(): JSX.Element {
 
           <Spacer />
           <li>
-            <SubTitle>Community</SubTitle>I am a self-admitted high level developer. For my work, I
-            largely rely on the work of other developers as the building blocks for my applications.
-            Even this seemingly simple{' '}
+            <SubTitle>Community</SubTitle>For my work, I largely rely on the work of other
+            developers as the building blocks for my applications. Even this seemingly simple{' '}
             <a
               href="https://github.com/lone-cloud/egorphilippov/blob/master/package.json#L16"
               target="_blank"
@@ -126,9 +125,10 @@ function Post(): JSX.Element {
             >
               site has a dozen dependencies and a couple dozen dev dependencies
             </a>
-            . This way I save myself an enormous amount of work trying to re-create the wheel. My
-            process for selecting technologies to work with is embarrassingly simple and it really
-            comes down to 3 simple questions:
+            . This way I save myself an enormous amount of work trying to recreate the wheel.
+            <Spacer />
+            My process for selecting technologies to work with is embarrassingly simple and it
+            really comes down to 3 simple questions:
             <ul>
               <li>How many stars does it have on GitHub?</li>
               <li>How many weekly (usually npm) downloads does it have?</li>
@@ -145,7 +145,7 @@ function Post(): JSX.Element {
             <a href="https://stateofjs.com/" target="_blank" rel="noreferrer">
               stateofjs.com
             </a>{' '}
-            also offer a great insightful into technical trends.
+            also offer great insightful into technical trends.
           </li>
 
           <Spacer />
@@ -153,11 +153,12 @@ function Post(): JSX.Element {
             <SubTitle>Productivity</SubTitle>The formula to define one&apos;s productivity is:{' '}
             <Italic>productivity = focus intensity x focus time</Italic> The steps one must take to
             maximize their productivity depend on the individual. For me it helps to be in a
-            comfortable position that I can spend hours in. Ideally free from distractions.
-            Soundproof headphones and repetitive music work also wonders for me. Besides any
-            technical recommendations, it&apos;s imperative to always take good care of oneself.
-            This is where good sleep and exercise come into play. Taking care of these will help
-            maintain a focused mind. Lastly, I&apos;ve found it hard for myself to stay highly
+            comfortable position that I can spend hours in, ideally free from distractions.
+            Soundproof headphones and repetitive music work also wonders for me.
+            <Spacer />
+            Beside any technical recommendations, it&apos;s imperative to always take good care of
+            oneself. This is where good sleep and exercise come into play. Taking care of these will
+            help maintain a focused mind. Lastly, I&apos;ve found it hard for myself to stay highly
             focused that I&apos;m uninterested in. If possible, try to make your work interesting -
             be it through finding it yourself or asking for it from your lead.
           </li>
@@ -188,12 +189,14 @@ function Post(): JSX.Element {
           <li>
             <SubTitle>Deployment</SubTitle>As with development, it&apos;s good to keep it simple.
             Docker, micro-services, kubernetes, etc... are all best left to enterprise development.
-            I&apos;ve had great success with serverless deployments. After{' '}
+            I&apos;ve had great success with serverless deployments.
+            <Spacer />
+            After{' '}
             <a href="https://github.com/lone-cloud/next-deploy" target="_blank" rel="noreferrer">
               attempting to create my own deployment library
             </a>{' '}
-            for AWS , I think it&apos;s much more straight-forward to use a more establishment
-            platform like{' '}
+            for AWS, I think it&apos;s much more straight-forward to use a more established platform
+            like{' '}
             <a href="https://vercel.com/" target="_blank" rel="noreferrer">
               Vercel
             </a>
