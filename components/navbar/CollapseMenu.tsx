@@ -14,7 +14,7 @@ const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props): JSX.Element => 
   const { pathname } = useRouter();
   const ref = useRef(null);
 
-  const transitions = useTransition(isNavbarOpen, null, {
+  const transition = useTransition(isNavbarOpen, {
     from: { position: 'absolute', opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
@@ -37,14 +37,16 @@ const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props): JSX.Element => 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref, isNavbarOpen]);
 
   return (
     <>
-      {transitions.map(
-        ({ item, key, props }) =>
+      {transition(
+        (style, item) =>
           item && (
-            <CollapseWrapper ref={ref} key={key} style={props}>
+            // @ts-ignore TODO: weird style typing?
+            <CollapseWrapper ref={ref} style={style}>
               <NavLinks>
                 <li>
                   <Link href={'/'} passHref>
@@ -106,6 +108,8 @@ const NavItem = styled.a<{ isActive?: boolean }>`
   display: flex;
   padding: 0 ${({ theme }) => theme.spacing.medium};
   color: ${({ isActive, theme }) => (isActive ? theme.colors.brand : theme.colors.grey)};
+  justify-content: center;
+  min-width: 10vw;
 
   :hover {
     color: ${({ isActive, theme }) =>
@@ -125,6 +129,7 @@ const NavLinks = styled.ul`
   padding: 2rem 1rem 2rem 2rem;
   display: flex;
   justify-content: center;
+  min-width: 10vw;
 
   a {
     text-decoration: none;
