@@ -27,7 +27,9 @@ const Clients: NextPage = () => {
           </BlogIndexYear>
         </BlogIndex>
 
-        {posts2021.map((post) => post())}
+        {posts2021.map((Post, i) => (
+          <Post key={i} />
+        ))}
 
         <ToTopButton />
       </BlogContainer>

@@ -17,7 +17,7 @@ export const EntryBody = styled.p`
 
   ol > li {
     list-style-type: decimal;
-    margin-left: 1rem;
+    margin-left: 2rem;
   }
 `;
 export const EntryTitle = styled.h2`
@@ -25,6 +25,7 @@ export const EntryTitle = styled.h2`
   font-size: 1.2em;
 `;
 export const SubTitle = styled.h3`
+  margin-top: 0.25rem;
   font-size: 1.1em;
 `;
 export const EntryDate = styled.p`

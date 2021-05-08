@@ -28,7 +28,6 @@ export function ToTopButton(): JSX.Element {
       <StyledFontAwesomeIcon
         icon={faArrowAltCircleUp}
         aria-label="Scroll to top"
-        aria-role="button"
         onClick={() =>
           window.scrollTo({
             top: 0,

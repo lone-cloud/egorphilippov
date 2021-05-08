@@ -3,9 +3,11 @@ import huegasmIsFree, { meta as huegasmIsFreeMeta } from './huegasm-is-free';
 import theRiseOfTheLongTailedBeast, {
   meta as theRiseOfTheLongTailedBeastMeta,
 } from './the-rise-of-the-long-tailed-beast';
-import theStateOfModernWebDevelopment, { meta as spillingTheBeansMeta } from './spilling-the-beans';
+import spillingTheBeans, { meta as spillingTheBeansMeta } from './spilling-the-beans';
+import humanSociety, { meta as humanSocietyMeta } from './human-society';
 
 export const metas = [
+  humanSocietyMeta,
   spillingTheBeansMeta,
   theRiseOfTheLongTailedBeastMeta,
   goodNightSweetTomatiMeta,
@@ -13,7 +15,8 @@ export const metas = [
 ];
 
 export const posts = [
-  theStateOfModernWebDevelopment,
+  humanSociety,
+  spillingTheBeans,
   theRiseOfTheLongTailedBeast,
   goodNightSweetTomati,
   huegasmIsFree,
