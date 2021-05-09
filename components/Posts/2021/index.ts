@@ -4,10 +4,8 @@ import theRiseOfTheLongTailedBeast, {
   meta as theRiseOfTheLongTailedBeastMeta,
 } from './the-rise-of-the-long-tailed-beast';
 import spillingTheBeans, { meta as spillingTheBeansMeta } from './spilling-the-beans';
-import humanSociety, { meta as humanSocietyMeta } from './human-society';
 
 export const metas = [
-  humanSocietyMeta,
   spillingTheBeansMeta,
   theRiseOfTheLongTailedBeastMeta,
   goodNightSweetTomatiMeta,
@@ -15,7 +13,6 @@ export const metas = [
 ];
 
 export const posts = [
-  humanSociety,
   spillingTheBeans,
   theRiseOfTheLongTailedBeast,
   goodNightSweetTomati,
