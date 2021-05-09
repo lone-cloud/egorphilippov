@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styled from 'styled-components';
 
 import { BlogEntry, EntryTitle, EntryDate, EntryBody, Spacer, SubTitle } from '../UI';
@@ -92,7 +91,7 @@ function HumanSociety(): JSX.Element {
         state. Until our superhero comes to save us, the best we can do is try to leave this world a
         better place and
         <CenteredContainer>
-          <Image src="/images/be-excellent-to-each-other.jpg" width={341} height={246} />
+          <img src="/images/be-excellent-to-each-other.jpg" width={341} height={246} />
         </CenteredContainer>
       </EntryBody>
     </BlogEntry>
