@@ -19,7 +19,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "next": "^11.0.1",
+    "next": "^11.1.0",
     "next-page-transitions": "^1.0.0-beta.2",
     "next-seo": "^4.26.0",
     "polished": "^4.1.3",
