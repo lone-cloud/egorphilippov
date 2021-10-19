@@ -4,8 +4,10 @@ import theRiseOfTheLongTailedBeast, {
   meta as theRiseOfTheLongTailedBeastMeta,
 } from './the-rise-of-the-long-tailed-beast';
 import spillingTheBeans, { meta as spillingTheBeansMeta } from './spilling-the-beans';
+import androidToIos, { meta as androidToIosMeta } from './android-to-ios';
 
 export const metas = [
+  androidToIosMeta,
   spillingTheBeansMeta,
   theRiseOfTheLongTailedBeastMeta,
   goodNightSweetTomatiMeta,
@@ -13,6 +15,7 @@ export const metas = [
 ];
 
 export const posts = [
+  androidToIos,
   spillingTheBeans,
   theRiseOfTheLongTailedBeast,
   goodNightSweetTomati,
