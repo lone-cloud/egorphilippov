@@ -6,7 +6,7 @@ export const Italic = styled.span`
 export const Spacer = styled.div`
   height: ${({ theme }) => theme.spacing.small};
 `;
-export const EntryBody = styled.p`
+export const EntryBody = styled.div`
   margin-top: ${({ theme }) => theme.spacing.medium};
   line-height: 1.5;
 
