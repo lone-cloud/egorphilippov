@@ -99,8 +99,11 @@ const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
           </FindMeLinks>
 
           <ForgedLinkContainer>
-            Forged from 🔥 ©{year}{' '}
-            <ForgedLink href="https://www.nidratech.com/">Nidratech Ltd.</ForgedLink>
+            Forged from{' '}
+            <span role="img" aria-label="hot fire burning">
+              🔥
+            </span>{' '}
+            ©{year} <ForgedLink href="https://www.nidratech.com/">Nidratech Ltd.</ForgedLink>
           </ForgedLinkContainer>
         </StyledFooter>
       </MainLayoutContainer>

@@ -5,17 +5,20 @@ interface Props {
   setIsNavbarOpen: (...args: any[]) => void;
 }
 
-const BurgerMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props): JSX.Element => {
-  return (
-    <Wrapper onClick={() => setIsNavbarOpen(!isNavbarOpen)}>
-      <div id="menu-toggle" className={isNavbarOpen ? 'open' : ''}>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-      </div>
-    </Wrapper>
-  );
-};
+const BurgerMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props) => (
+  <Wrapper
+    tabIndex={0}
+    role="button"
+    onClick={() => setIsNavbarOpen(!isNavbarOpen)}
+    onKeyDown={() => setIsNavbarOpen(!isNavbarOpen)}
+  >
+    <div id="menu-toggle" className={isNavbarOpen ? 'open' : ''}>
+      <span>&nbsp;</span>
+      <span>&nbsp;</span>
+      <span>&nbsp;</span>
+    </div>
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
   position: relative;

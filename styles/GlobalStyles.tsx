@@ -44,7 +44,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const GlobalStyles = (): JSX.Element => (
+const GlobalStyles = () => (
   <>
     <Reset />
     <GlobalStyle />

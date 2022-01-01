@@ -25,7 +25,18 @@ const Home: NextPage = () => {
         </PageSection>
 
         <PageSection>
-          I am always looking for exciting new opportunities (✔️ remote ✔️ contract ❌
+          I am always looking for exciting new opportunities (
+          <span role="img" aria-label="check mark">
+            ✔️
+          </span>{' '}
+          remote{' '}
+          <span role="img" aria-label="check mark">
+            ✔️
+          </span>{' '}
+          contract{' '}
+          <span role="img" aria-label="cross mark">
+            ❌
+          </span>{' '}
           recruiters/agencies).
           <br />
           Feel free to{' '}

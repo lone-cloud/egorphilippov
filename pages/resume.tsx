@@ -15,6 +15,7 @@ const Clients: NextPage = () => {
 
       <ResumeContainer data="/resume.pdf" width="100%" type="application/pdf">
         <iframe
+          title="Resumé PDF"
           width="100%"
           src="https://docs.google.com/viewer?url=https://www.egorphilippov.me/resume.pdf&embedded=true"
         ></iframe>

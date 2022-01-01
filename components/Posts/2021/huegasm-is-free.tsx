@@ -6,7 +6,7 @@ export const meta = {
   date: 'Feb. 2, 2021',
 };
 
-function Post(): JSX.Element {
+function Post() {
   return (
     <BlogEntry id={meta.id}>
       <EntryTitle>{meta.title}</EntryTitle>

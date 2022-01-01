@@ -4,7 +4,7 @@ import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons';
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-export function ToTopButton(): JSX.Element {
+export function ToTopButton() {
   const [isArrowVisible, setIsArrowVisible] = useState(false);
 
   useEffect(() => {

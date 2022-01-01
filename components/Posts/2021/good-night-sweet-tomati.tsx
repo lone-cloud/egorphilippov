@@ -6,7 +6,7 @@ export const meta = {
   date: 'Jan. 3, 2021',
 };
 
-function Post(): JSX.Element {
+function Post() {
   return (
     <BlogEntry id={meta.id}>
       <EntryTitle>{meta.title}</EntryTitle>
@@ -27,8 +27,11 @@ function Post(): JSX.Element {
         <ul>
           <li>
             Never cheap out on server auto-scaling in case you accidentally blow up. Getting hugged
-            to death when it&apos;s time to shine and getting angry emails and 1 ⭐ reviews is a
-            very <Italic>feelsbadman</Italic> moment.
+            to death when it&apos;s time to shine and getting angry emails and 1{' '}
+            <span role="img" aria-label="star">
+              ⭐
+            </span>{' '}
+            reviews is a very <Italic>feelsbadman</Italic> moment.
           </li>
           <li>
             Reddit is fantastic for marketing and getting feedback. Just need to find the

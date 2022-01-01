@@ -10,7 +10,7 @@ interface Props {
   setIsNavbarOpen: (...args: any[]) => void;
 }
 
-const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props): JSX.Element => {
+const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props) => {
   const { pathname } = useRouter();
   const ref = useRef(null);
 
@@ -49,10 +49,11 @@ const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props): JSX.Element => 
             <CollapseWrapper ref={ref} style={style}>
               <NavLinks>
                 <li>
-                  <Link href={'/'} passHref>
+                  <Link href="/" passHref>
                     <NavItem
+                      href="/"
                       as="a"
-                      title={'Home'}
+                      title="Home"
                       onClick={() => setIsNavbarOpen(false)}
                       isActive={pathname === '/'}
                     >
@@ -61,10 +62,11 @@ const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props): JSX.Element => 
                   </Link>
                 </li>
                 <li>
-                  <Link href={'/blog'} passHref>
+                  <Link href="/blog" passHref>
                     <NavItem
+                      href="/blog"
                       as="a"
-                      title={'Blog'}
+                      title="Blog"
                       onClick={() => setIsNavbarOpen(false)}
                       isActive={pathname === '/blog'}
                     >
@@ -73,10 +75,11 @@ const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props): JSX.Element => 
                   </Link>
                 </li>
                 <li>
-                  <Link href={'/resume'} passHref>
+                  <Link href="/resume" passHref>
                     <NavItem
+                      href="/resume"
                       as="a"
-                      title={'Resumé'}
+                      title="Resumé"
                       onClick={() => setIsNavbarOpen(false)}
                       isActive={pathname === '/resume'}
                     >
@@ -85,10 +88,11 @@ const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props): JSX.Element => 
                   </Link>
                 </li>
                 <li>
-                  <Link href={'/contact'} passHref>
+                  <Link href="/contact" passHref>
                     <NavItem
+                      href="/contact"
                       as="a"
-                      title={'Contact'}
+                      title="Contact"
                       onClick={() => setIsNavbarOpen(false)}
                       isActive={pathname === '/contact'}
                     >

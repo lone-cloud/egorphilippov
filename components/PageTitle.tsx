@@ -4,7 +4,7 @@ interface Props {
   title: string;
 }
 
-export function PageTitle({ title }: Props): JSX.Element {
+export function PageTitle({ title }: Props) {
   return (
     <TitleContainer>
       <Title>{title}</Title>
