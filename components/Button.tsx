@@ -5,33 +5,30 @@ import { darken, lighten } from 'polished';
 interface Props {
   children?: ReactNode;
   onClick?: (...args: any[]) => void;
-  type?: string;
-  as?: string;
+  type?: 'button' | 'submit' | 'reset';
+  as?: undefined;
   isLoading?: boolean;
   isDisabled?: boolean;
 }
 
-function ButtonComponent(
+const ButtonComponent = (
   { children, onClick, isDisabled, isLoading, ...props }: Props,
   ref: Ref<HTMLButtonElement>
-) {
-  return (
-    // @ts-ignore TODO improve typing
-    <StyledButton
-      ref={ref}
-      onClick={(e: MouseEvent) => {
-        const isClickable = !isDisabled && !isLoading;
-        if (typeof onClick === 'function' && isClickable) {
-          onClick(e);
-        }
-      }}
-      disabled={isDisabled || isLoading}
-      {...props}
-    >
-      {children}
-    </StyledButton>
-  );
-}
+) => (
+  <StyledButton
+    ref={ref}
+    onClick={(e: MouseEvent) => {
+      const isClickable = !isDisabled && !isLoading;
+      if (typeof onClick === 'function' && isClickable) {
+        onClick(e);
+      }
+    }}
+    disabled={isDisabled || isLoading}
+    {...props}
+  >
+    {children}
+  </StyledButton>
+);
 
 const StyledButton = styled.button`
   min-width: 8rem;
@@ -59,4 +56,6 @@ const StyledButton = styled.button`
   }
 `;
 
-export const Button = forwardRef(ButtonComponent);
+const Button = forwardRef(ButtonComponent);
+
+export default Button;

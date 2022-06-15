@@ -4,12 +4,12 @@ import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons';
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-export function ToTopButton() {
+function ToTopButton() {
   const [isArrowVisible, setIsArrowVisible] = useState(false);
 
   useEffect(() => {
     function onScroll() {
-      if (window.pageYOffset > 300) {
+      if (window.scrollY > 300) {
         return setIsArrowVisible(true);
       }
 
@@ -60,3 +60,5 @@ const ToTopButtonContainer = styled.div<{ isDisplayed?: boolean }>`
     right: 5%;
   }
 `;
+
+export default ToTopButton;

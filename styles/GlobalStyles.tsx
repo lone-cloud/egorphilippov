@@ -5,7 +5,7 @@ import { darken } from 'polished';
 
 import { COLOR_BRAND, COLOR_BLACK } from 'styles/theme';
 
-export const GlobalStyle = createGlobalStyle`  
+const GlobalStyle = createGlobalStyle`  
   html {
      scroll-behavior: smooth;
   }
@@ -31,13 +31,16 @@ export const GlobalStyle = createGlobalStyle`
   .page-transition-enter {
     opacity: 0;
   }
+
   .page-transition-enter-active {
     opacity: 1;
     transition: opacity 200ms;
   }
+
   .page-transition-exit {
     opacity: 1;
   }
+
   .page-transition-exit-active {
     opacity: 0;
     transition: opacity 200ms;

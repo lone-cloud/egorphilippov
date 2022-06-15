@@ -1,3 +1,5 @@
+import type { DefaultTheme } from 'styled-components';
+
 export const COLOR_BRAND = '#15acd6';
 export const COLOR_WHITE = '#ffffff';
 export const COLOR_BLACK = '#2b2b2b';
@@ -5,7 +7,7 @@ export const COLOR_GREY_LIGHT = '#CFD2D3';
 export const COLOR_GREY = '#6c757d';
 export const COLOR_NIDRATECH = '#d5851d';
 
-const theme = {
+const theme: DefaultTheme = {
   colors: {
     brand: COLOR_BRAND,
     black: COLOR_BLACK,

@@ -1,41 +1,39 @@
-import { NextPage } from 'next';
 import styled from 'styled-components';
 import { NextSeo } from 'next-seo';
 
-import { Container, ToTopButton } from 'components';
+import Container from 'components/Container';
+import ToTopButton from 'components/ToTopButton';
 import { posts as posts2021, metas as metas2021 } from 'components/Posts/2021';
 
-const Clients: NextPage = () => {
-  return (
-    <Container>
-      <NextSeo
-        title="Blog | Egor Philippov"
-        description="The personal blog of Egor Philippov."
-        canonical="https://www.egorphilippov.me/blog"
-      />
+const Clients = () => (
+  <Container>
+    <NextSeo
+      title="Blog | Egor Philippov"
+      description="The personal blog of Egor Philippov."
+      canonical="https://www.egorphilippov.me/blog"
+    />
 
-      <BlogContainer>
-        <BlogIndex>
-          <BlogIndexYear>
-            <YearTitle>2021</YearTitle>
+    <BlogContainer>
+      <BlogIndex>
+        <BlogIndexYear>
+          <YearTitle>2021</YearTitle>
 
-            {metas2021.map(({ id, title }) => (
-              <div key={id}>
-                <BlogEntryLink href={`#${id}`}>{title}</BlogEntryLink>
-              </div>
-            ))}
-          </BlogIndexYear>
-        </BlogIndex>
+          {metas2021.map(({ id, title }) => (
+            <div key={id}>
+              <BlogEntryLink href={`#${id}`}>{title}</BlogEntryLink>
+            </div>
+          ))}
+        </BlogIndexYear>
+      </BlogIndex>
 
-        {posts2021.map((Post, i) => (
-          <Post key={i} />
-        ))}
+      {posts2021.map((Post, i) => (
+        <Post key={i} />
+      ))}
 
-        <ToTopButton />
-      </BlogContainer>
-    </Container>
-  );
-};
+      <ToTopButton />
+    </BlogContainer>
+  </Container>
+);
 
 export const BlogContainer = styled.div`
   font-size: 1.25em;

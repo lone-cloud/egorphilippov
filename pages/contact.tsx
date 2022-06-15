@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
-import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 
-import { Button, Container } from 'components';
+import Button from 'components/Button';
+import Container from 'components/Container';
 
-const Contact: NextPage = () => {
+const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const isSubmitEnabled = email.length > 2 && message.length > 2;
@@ -83,7 +83,8 @@ const FormLabel = styled.label`
   margin-top: ${({ theme }) => theme.spacing.small};
 `;
 const MessageInput = styled.textarea`
-  ${formControl}
+  ${formControl};
+
   height: auto;
 `;
 const EmailInput = styled.input`

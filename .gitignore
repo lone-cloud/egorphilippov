@@ -21,3 +21,4 @@ yarn-error.log*
 /out
 /.next-deploy
 /.next-deploy-build
+/tsconfig.tsbuildinfo

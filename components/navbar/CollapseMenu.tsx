@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { darken } from 'polished';
 import { useRouter } from 'next/router';
 
-interface Props {
+interface CollapseMenuProps {
   isNavbarOpen: boolean;
   setIsNavbarOpen: (...args: any[]) => void;
 }
 
-const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props) => {
+const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: CollapseMenuProps) => {
   const { pathname } = useRouter();
   const ref = useRef(null);
 
@@ -22,11 +22,11 @@ const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props) => {
 
   useEffect(() => {
     const menuToggle = document.querySelector('#menu-toggle');
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         isNavbarOpen &&
         !ref?.current.contains(event.target) &&
-        !menuToggle?.contains(event.target)
+        !menuToggle?.contains(event.target as Element)
       ) {
         setIsNavbarOpen(false);
       }

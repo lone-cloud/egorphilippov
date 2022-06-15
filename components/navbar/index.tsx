@@ -11,7 +11,7 @@ interface Props {
   setIsNavbarOpen: (...args: any[]) => void;
 }
 
-export function Navbar({ isNavbarOpen, setIsNavbarOpen }: Props) {
+export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Props) {
   const { pathname } = useRouter();
 
   return (

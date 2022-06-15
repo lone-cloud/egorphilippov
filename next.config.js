@@ -3,4 +3,7 @@ module.exports = {
   future: {
     strictPostcssConfiguration: true,
   },
+  experimental: {
+    scrollRestoration: true,
+  },
 };

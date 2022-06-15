@@ -37,7 +37,7 @@ export const BlogEntry = styled.div`
   margin-top: -80px;
   padding-top: 80px;
 
-  :after {
+  ::after {
     margin: ${({ theme }) => theme.spacing.large} 0;
     width: 100%;
     content: '';

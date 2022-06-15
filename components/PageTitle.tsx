@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 
-interface Props {
+interface PageTitleProps {
   title: string;
 }
 
-export function PageTitle({ title }: Props) {
-  return (
-    <TitleContainer>
-      <Title>{title}</Title>
-    </TitleContainer>
-  );
-}
+const PageTitle = ({ title }: PageTitleProps) => (
+  <TitleContainer>
+    <Title>{title}</Title>
+  </TitleContainer>
+);
 
 const Title = styled.h1`
   text-transform: uppercase;
@@ -21,3 +19,5 @@ const TitleContainer = styled.div`
   display: inline-block;
   margin-bottom: ${({ theme }) => theme.spacing.medium};
 `;
+
+export default PageTitle;

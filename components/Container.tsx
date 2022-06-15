@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+const Container = styled.div`
   max-width: 60rem;
   margin: auto;
   margin-top: ${({ theme }) => theme.spacing.medium};
@@ -12,3 +12,5 @@ export const Container = styled.div`
     padding: ${({ theme }) => `0 ${theme.spacing.small}`};
   }
 `;
+
+export default Container;

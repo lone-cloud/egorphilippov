@@ -1,54 +1,51 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 
-const Home: NextPage = () => {
-  return (
-    <HomeContainer>
-      <NextSeo
-        title="Egor Philippov"
-        description="The personal site of Egor Philippov."
-        canonical="https://www.egorphilippov.me"
-      />
+const Home = () => (
+  <HomeContainer>
+    <NextSeo
+      title="Egor Philippov"
+      description="The personal site of Egor Philippov."
+      canonical="https://www.egorphilippov.me"
+    />
 
-      <PageBody>
-        <PageSection>
-          <HelloText>- Hello</HelloText>
-        </PageSection>
+    <PageBody>
+      <PageSection>
+        <HelloText>- Hello</HelloText>
+      </PageSection>
 
-        <PageSection>
-          Is it me you&apos;re looking for? My name is{' '}
-          <HighlightedText>Egor Philippov</HighlightedText> and I&apos;m a passionate{' '}
-          <HighlightedText>Full Stack Software Engineer</HighlightedText>. I am comfortable working
-          on the server, browser or mobile. You may have heard of me from.
-        </PageSection>
+      <PageSection>
+        Is it me you&apos;re looking for? My name is{' '}
+        <HighlightedText>Egor Philippov</HighlightedText> and I&apos;m a passionate{' '}
+        <HighlightedText>Full Stack Software Engineer</HighlightedText>. I am comfortable working on
+        the server, browser or mobile. You may have heard of me from.
+      </PageSection>
 
-        <PageSection>
-          I am always looking for exciting new opportunities (
-          <span role="img" aria-label="check mark">
-            ✔️
-          </span>{' '}
-          remote{' '}
-          <span role="img" aria-label="check mark">
-            ✔️
-          </span>{' '}
-          contract{' '}
-          <span role="img" aria-label="cross mark">
-            ❌
-          </span>{' '}
-          recruiters/agencies).
-          <br />
-          Feel free to{' '}
-          <Link href="/contact" passHref>
-            contact me
-          </Link>
-          .
-        </PageSection>
-      </PageBody>
-    </HomeContainer>
-  );
-};
+      <PageSection>
+        I am always looking for exciting new opportunities (
+        <span role="img" aria-label="check mark">
+          ✔️
+        </span>{' '}
+        remote{' '}
+        <span role="img" aria-label="check mark">
+          ✔️
+        </span>{' '}
+        contract{' '}
+        <span role="img" aria-label="cross mark">
+          ❌
+        </span>{' '}
+        recruiters/agencies).
+        <br />
+        Feel free to{' '}
+        <Link href="/contact" passHref>
+          contact me
+        </Link>
+        .
+      </PageSection>
+    </PageBody>
+  </HomeContainer>
+);
 
 const HighlightedText = styled.span`
   color: ${({ theme }) => theme.colors.brand};
