@@ -7,6 +7,7 @@ import NextDocument, {
   DocumentInitialProps,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { Fragment } from 'react';
 import type { AppType } from 'next/dist/shared/lib/utils';
 
 class Document extends NextDocument {
@@ -26,12 +27,12 @@ class Document extends NextDocument {
 
       return {
         ...initialProps,
-        styles: (
-          <>
+        styles: [
+          <Fragment key={0}>
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
-        ),
+          </Fragment>,
+        ],
       };
     } finally {
       sheet.seal();

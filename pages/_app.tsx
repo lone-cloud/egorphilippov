@@ -103,7 +103,10 @@ const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
             <span role="img" aria-label="hot fire burning">
               🔥
             </span>{' '}
-            ©{year} <ForgedLink href="https://www.nidratech.com/">Nidratech Ltd.</ForgedLink>
+            ©{year}{' '}
+            <ForgedLink href="https://www.nidratech.com/" target="_blank">
+              Nidratech Ltd.
+            </ForgedLink>
           </ForgedLinkContainer>
         </StyledFooter>
       </MainLayoutContainer>
