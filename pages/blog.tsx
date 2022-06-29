@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo';
 
 import Container from 'components/Container';
 import ToTopButton from 'components/ToTopButton';
-import { posts as posts2021, metas as metas2021 } from 'components/Posts/2021';
+import blogPosts from 'components/Posts';
 
 const Clients = () => (
   <Container>
@@ -15,20 +15,20 @@ const Clients = () => (
 
     <BlogContainer>
       <BlogIndex>
-        <BlogIndexYear>
-          <YearTitle>2021</YearTitle>
+        {blogPosts.map(({ year, metas }) => (
+          <BlogIndexYear key={year}>
+            <YearTitle>{year}</YearTitle>
 
-          {metas2021.map(({ id, title }) => (
-            <div key={id}>
-              <BlogEntryLink href={`#${id}`}>{title}</BlogEntryLink>
-            </div>
-          ))}
-        </BlogIndexYear>
+            {metas.map(({ id, title }) => (
+              <div key={id}>
+                <BlogEntryLink href={`#${id}`}>{title}</BlogEntryLink>
+              </div>
+            ))}
+          </BlogIndexYear>
+        ))}
       </BlogIndex>
 
-      {posts2021.map((Post, i) => (
-        <Post key={i} />
-      ))}
+      {blogPosts.map(({ posts }) => posts.map((Post, i) => <Post key={i} />))}
 
       <ToTopButton />
     </BlogContainer>
@@ -51,10 +51,12 @@ const BlogEntryLink = styled.a`
 const BlogIndex = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.brand};
   border-radius: 0.25rem;
-  padding: ${({ theme }) => theme.spacing.medium};
+  padding: ${({ theme }) =>
+    `0 ${theme.spacing.medium} ${theme.spacing.medium} ${theme.spacing.medium}`};
   margin-bottom: ${({ theme }) => theme.spacing.large};
 `;
 const BlogIndexYear = styled.div`
+  margin-top: ${({ theme }) => theme.spacing.medium};
   font-size: 0.9em;
 `;
 const YearTitle = styled.div`
