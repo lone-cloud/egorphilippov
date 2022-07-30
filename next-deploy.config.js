@@ -1,5 +1,5 @@
 module.exports = {
   engine: 'github',
   debug: true,
-  domain: 'www.egorphilippov.me',
+  domain: 'egor.philippov.ca',
 };

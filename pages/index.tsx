@@ -7,7 +7,7 @@ const Home = () => (
     <NextSeo
       title="Egor Philippov"
       description="The personal site of Egor Philippov."
-      canonical="https://www.egorphilippov.me"
+      canonical="https://egor.philippov.ca"
     />
 
     <PageBody>

@@ -9,7 +9,7 @@ const Success = () => (
     <NextSeo
       title="Success | Egor Philippov"
       description="A success page."
-      canonical="https://www.egorphilippov.me/success"
+      canonical="https://egor.philippov.ca/success"
       nofollow
       noindex
     />

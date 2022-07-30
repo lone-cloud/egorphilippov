@@ -16,7 +16,7 @@ const Contact = () => {
       <NextSeo
         title="Contact | Egor Philippov"
         description="A contact form for Egor Philippov."
-        canonical="https://www.egorphilippov.me/contact"
+        canonical="https://egor.philippov.ca/contact"
       />
 
       <ContactForm action="https://formspree.io/philippovegor@gmail.com" method="POST">
@@ -40,7 +40,7 @@ const Contact = () => {
           />
         </FormGroup>
 
-        <input type="hidden" name="_next" value="https://www.egorphilippov.me/success" />
+        <input type="hidden" name="_next" value="https://egor.philippov.ca/success" />
 
         <Button isDisabled={!isSubmitEnabled} type="submit">
           Submit

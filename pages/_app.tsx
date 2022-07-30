@@ -42,7 +42,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
           locale: 'en_US',
           images: [
             {
-              url: 'https://www.egorphilippov.me/images/logo-xl.jpg',
+              url: 'https://egor.philippov.ca/images/logo-xl.jpg',
               width: 496,
               height: 496,
             },

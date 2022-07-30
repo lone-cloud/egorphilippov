@@ -10,7 +10,7 @@ const Clients = () => (
     <NextSeo
       title="Blog | Egor Philippov"
       description="The personal blog of Egor Philippov."
-      canonical="https://www.egorphilippov.me/blog"
+      canonical="https://egor.philippov.ca/blog"
     />
 
     <BlogContainer>
