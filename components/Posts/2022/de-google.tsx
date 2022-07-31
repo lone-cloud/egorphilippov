@@ -56,6 +56,7 @@ const Post = () => (
         </li>
         <li>Switching over to Protonmail for my email, calendar and file storage.</li>
         <li>Removing Google-analytics from all my personal sites.</li>
+        <li>Switching to use startpage.com for searching instead of using Google directly.</li>
       </ul>
       <Spacer />I encourage the reader to think about their privacy and how comfortable they are
       allowing mega-corporation and the state knowing and recording all aspects of their lives. And
