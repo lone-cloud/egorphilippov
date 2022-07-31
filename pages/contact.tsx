@@ -19,7 +19,7 @@ const Contact = () => {
         canonical="https://egor.philippov.ca/contact"
       />
 
-      <ContactForm action="https://formspree.io/philippovegor@gmail.com" method="POST">
+      <ContactForm action="https://formspree.io/f/xeqdjarz" method="POST">
         <FormGroup>
           <FormLabel htmlFor="email">Email</FormLabel>
           <EmailInput
@@ -39,8 +39,6 @@ const Contact = () => {
             onChange={(e) => setMessage(e.target.value)}
           />
         </FormGroup>
-
-        <input type="hidden" name="_next" value="https://egor.philippov.ca/success" />
 
         <Button isDisabled={!isSubmitEnabled} type="submit">
           Submit
