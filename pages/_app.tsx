@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import Router from 'next/router';
 import Head from 'next/head';
-import ReactGA from 'react-ga';
 import { PageTransition } from 'next-page-transitions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -23,16 +21,8 @@ config.autoAddCss = false;
 
 const year = new Date().getFullYear();
 
-Router.events.on('routeChangeComplete', () => {
-  ReactGA.pageview(`${window.location.pathname}${window.location.search}`);
-});
-
 const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-
-  useEffect(() => {
-    ReactGA.initialize(process.env.NEXT_PUBLIC_GA_TRACKING_ID);
-  }, []);
 
   return (
     <ThemeProvider theme={theme}>
