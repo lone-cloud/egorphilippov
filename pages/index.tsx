@@ -19,7 +19,15 @@ const Home = () => (
         Is it me you&apos;re looking for? My name is{' '}
         <HighlightedText>Egor Philippov</HighlightedText> and I&apos;m a passionate{' '}
         <HighlightedText>Full Stack Software Engineer</HighlightedText>. I am comfortable working on
-        the server, browser or mobile. You may have heard of me from.
+        the server, browser or mobile. You may have heard of me from{' '}
+        <a href="https://score.restaurant" target="_blank" rel="noreferrer">
+          Tomati
+        </a>{' '}
+        or{' '}
+        <a href="http://www.huegasm.com" target="_blank" rel="noreferrer">
+          Huegasm
+        </a>
+        .
       </PageSection>
 
       <PageSection>

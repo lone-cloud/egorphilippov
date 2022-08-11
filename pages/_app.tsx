@@ -11,7 +11,7 @@ import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
 import GlobalStyles from 'styles/GlobalStyles';
-import theme from 'styles/theme';
+import stylesTheme from 'styles/theme';
 import Navbar from 'components/Navbar';
 
 import '@fontsource/roboto';
@@ -25,7 +25,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={stylesTheme}>
       <DefaultSeo
         openGraph={{
           type: 'website',
