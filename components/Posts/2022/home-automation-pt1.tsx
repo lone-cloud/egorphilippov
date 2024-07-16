@@ -2,7 +2,7 @@ import { BlogEntry, EntryTitle, EntryDate, EntryBody } from '../UI';
 
 export const meta = {
   id: 'home-automation-pt1',
-  title: 'Home automation is cool - pt 1',
+  title: 'Home automation is cool',
   date: 'June 27, 2022',
 };
 
@@ -14,7 +14,7 @@ const Post = () => (
       It&apos;s been some time since my last blog post as I was busy moving and settling into my new
       home. It&apos;s given me the opportunity to discover the magic of home automation and right
       now the name of the game is{' '}
-      <a href="https://score.restaurant/" target="_blank" rel="noreferrer">
+      <a href="https://www.home-assistant.io/" target="_blank" rel="noreferrer">
         Home Assistant
       </a>
       . Through Home Assistant, one may run a local server (I run it on a Raspberry Pi 4) that may

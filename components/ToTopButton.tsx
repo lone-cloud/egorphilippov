@@ -24,7 +24,7 @@ function ToTopButton() {
   }, []);
 
   return (
-    <ToTopButtonContainer isDisplayed={isArrowVisible}>
+    <ToTopButtonContainer $isDisplayed={isArrowVisible}>
       <StyledFontAwesomeIcon
         icon={faArrowAltCircleUp}
         aria-label="Scroll to top"
@@ -49,12 +49,12 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
     color: ${({ theme }) => darken(0.05, theme.colors.brand)};
   }
 `;
-const ToTopButtonContainer = styled.div<{ isDisplayed?: boolean }>`
+const ToTopButtonContainer = styled.div<{ $isDisplayed?: boolean }>`
   bottom: 10%;
   right: 10%;
   position: fixed;
   cursor: pointer;
-  display: ${({ isDisplayed }) => (isDisplayed ? 'block' : 'none')};
+  display: ${({ $isDisplayed }) => ($isDisplayed ? 'block' : 'none')};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     right: 5%;

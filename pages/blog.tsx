@@ -1,18 +1,11 @@
 import styled from 'styled-components';
-import { NextSeo } from 'next-seo';
 
-import Container from 'components/Container';
+import Layout from 'components/Layout';
 import ToTopButton from 'components/ToTopButton';
 import blogPosts from 'components/Posts';
 
 const Clients = () => (
-  <Container>
-    <NextSeo
-      title="Blog | Egor Philippov"
-      description="The personal blog of Egor Philippov."
-      canonical="https://egor.philippov.ca/blog"
-    />
-
+  <Layout title="Blog | Egor Philippov" description="The personal blog of Egor Philippov.">
     <BlogContainer>
       <BlogIndex>
         {blogPosts.map(({ year, metas }) => (
@@ -32,7 +25,7 @@ const Clients = () => (
 
       <ToTopButton />
     </BlogContainer>
-  </Container>
+  </Layout>
 );
 
 export const BlogContainer = styled.div`

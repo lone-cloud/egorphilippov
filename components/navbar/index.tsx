@@ -19,7 +19,7 @@ export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Props) {
       <NavBar>
         <FlexContainer>
           <Link href="/" passHref>
-            <NavItem href="/" as="a" aria-label="Site cloud logo">
+            <NavItem aria-label="Site cloud logo">
               <ImgLogo src="images/logo.jpg" alt="Site cloud logo" />
             </NavItem>
           </Link>
@@ -27,33 +27,28 @@ export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Props) {
           <NavLinks>
             <li>
               <Link href="/" passHref>
-                <NavItem href="/" as="a" title="Home" isActive={pathname === '/'}>
+                <NavItem title="Home" $isActive={pathname === '/'}>
                   Home
                 </NavItem>
               </Link>
             </li>
             <li>
               <Link href="/blog" passHref>
-                <NavItem href="/blog" as="a" title="Blog" isActive={pathname === '/blog'}>
+                <NavItem title="Blog" $isActive={pathname === '/blog'}>
                   Blog
                 </NavItem>
               </Link>
             </li>
             <li>
               <Link href="/resume" passHref>
-                <NavItem href="/resume" as="a" title="Resumé" isActive={pathname === '/resume'}>
+                <NavItem title="Resumé" $isActive={pathname === '/resume'}>
                   Resumé
                 </NavItem>
               </Link>
             </li>
             <li>
               <Link href="/contact" passHref>
-                <NavItem
-                  href="/contact"
-                  as="a"
-                  title="Contact us"
-                  isActive={pathname === '/contact'}
-                >
+                <NavItem title="Contact us" $isActive={pathname === '/contact'}>
                   Contact
                 </NavItem>
               </Link>
@@ -71,15 +66,15 @@ export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Props) {
   );
 }
 
-const NavItem = styled.a<{ isActive?: boolean }>`
+const NavItem = styled.div<{ $isActive?: boolean }>`
   display: flex;
   padding: 0 ${({ theme }) => theme.spacing.medium};
-  color: ${({ isActive, theme }) => (isActive ? theme.colors.brand : theme.colors.grey)};
+  color: ${({ $isActive, theme }) => ($isActive ? theme.colors.brand : theme.colors.grey)};
   align-items: center;
 
   :hover {
-    color: ${({ isActive, theme }) =>
-      darken(0.05, isActive ? theme.colors.brand : theme.colors.grey)};
+    color: ${({ $isActive, theme }) =>
+      darken(0.05, $isActive ? theme.colors.brand : theme.colors.grey)};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {

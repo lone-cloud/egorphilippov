@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
-import { NextSeo } from 'next-seo';
 
 import Button from 'components/Button';
-import Container from 'components/Container';
+import Layout from 'components/Layout';
 
 const Contact = () => {
   const [email, setEmail] = useState('');
@@ -12,13 +11,7 @@ const Contact = () => {
   const isSubmitEnabled = email.length > 2 && message.length > 2;
 
   return (
-    <Container>
-      <NextSeo
-        title="Contact | Egor Philippov"
-        description="A contact form for Egor Philippov."
-        canonical="https://egor.philippov.ca/contact"
-      />
-
+    <Layout title="Contact | Egor Philippov" description="A contact form for Egor Philippov.">
       <ContactForm action="https://formspree.io/f/xeqdjarz" method="POST">
         <FormGroup>
           <FormLabel htmlFor="email">Email</FormLabel>
@@ -44,7 +37,7 @@ const Contact = () => {
           Submit
         </Button>
       </ContactForm>
-    </Container>
+    </Layout>
   );
 };
 
@@ -65,7 +58,9 @@ const formControl = css`
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 
   :focus {
     color: #495057;

@@ -1,25 +1,21 @@
 import { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
-import { PageTransition } from 'next-page-transitions';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { darken } from 'polished';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { DefaultSeo } from 'next-seo';
+import { AnimatePresence } from 'framer-motion';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
 import GlobalStyles from 'styles/GlobalStyles';
 import stylesTheme from 'styles/theme';
 import Navbar from 'components/Navbar';
+import Footer from 'components/Footer';
 
 import '@fontsource/roboto';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 config.autoAddCss = false;
-
-const year = new Date().getFullYear();
 
 const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -60,59 +56,17 @@ const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
         <Navbar isNavbarOpen={isNavbarOpen} setIsNavbarOpen={setIsNavbarOpen} />
 
         <StyledMain>
-          <PageTransition timeout={200} classNames="page-transition" skipInitialTransition>
-            <Component {...pageProps} key={router.route} />
-          </PageTransition>
+          <AnimatePresence mode="wait" initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
+            <Component key={router.asPath} {...pageProps} />
+          </AnimatePresence>
         </StyledMain>
 
-        <StyledFooter>
-          <FindMeLinks>
-            <FindMeText>- Find me on</FindMeText>
-
-            <a
-              href="https://github.com/lone-cloud"
-              rel="noreferrer"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <StyledFontAwesomeIcon icon={faGithub} size="2x" />
-            </a>
-
-            <a
-              href="https://ca.linkedin.com/in/egor-philippov-1482207b"
-              rel="noreferrer"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <StyledFontAwesomeIcon icon={faLinkedin} size="2x" />
-            </a>
-          </FindMeLinks>
-
-          <ForgedLinkContainer>
-            Forged from{' '}
-            <span role="img" aria-label="hot fire burning">
-              🔥
-            </span>{' '}
-            ©{year}{' '}
-            <ForgedLink href="https://www.nidratech.com/" target="_blank">
-              Nidratech Ltd.
-            </ForgedLink>
-          </ForgedLinkContainer>
-        </StyledFooter>
+        <Footer />
       </MainLayoutContainer>
     </ThemeProvider>
   );
 };
 
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  padding: 0 0.5rem;
-`;
-const FindMeText = styled.span`
-  text-transform: uppercase;
-  margin-right: ${({ theme }) => theme.spacing.medium};
-  font-weight: 600;
-  font-size: 0.9em;
-`;
 const MainLayoutContainer = styled.div`
   display: grid;
   grid-template-rows: 1fr min-content;
@@ -120,44 +74,6 @@ const MainLayoutContainer = styled.div`
 `;
 const StyledMain = styled.main`
   padding-top: ${({ theme }) => theme.spacing.navBarHeight};
-`;
-const StyledFooter = styled.footer`
-  display: flex;
-  justify-content: center;
-  padding: ${({ theme }) => theme.spacing.large};
-  flex-direction: column;
-`;
-const ForgedLink = styled.a`
-  color: ${({ theme }) => theme.colors.nidratech};
-
-  :hover,
-  :focus {
-    color: ${({ theme }) => darken(0.05, theme.colors.nidratech)};
-  }
-`;
-const FindMeLinks = styled.div`
-  align-self: flex-end;
-  margin: 0 20vw;
-  display: flex;
-  align-items: center;
-
-  a {
-    color: ${({ theme }) => theme.colors.black};
-    transition: all 200ms;
-
-    :focus,
-    :hover {
-      color: ${({ theme }) => darken(0.05, theme.colors.brand)};
-    }
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    margin: 0;
-  }
-`;
-const ForgedLinkContainer = styled.div`
-  margin-top: 2rem;
-  align-self: center;
 `;
 
 export default App;

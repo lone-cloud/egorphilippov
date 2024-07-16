@@ -1,15 +1,10 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { NextSeo } from 'next-seo';
+
+import Layout from 'components/Layout';
 
 const Home = () => (
-  <HomeContainer>
-    <NextSeo
-      title="Egor Philippov"
-      description="The personal site of Egor Philippov."
-      canonical="https://egor.philippov.ca"
-    />
-
+  <Layout title="Egor Philippov" description="The personal site of Egor Philippov." isHome>
     <PageBody>
       <PageSection>
         <HelloText>- Hello</HelloText>
@@ -19,15 +14,7 @@ const Home = () => (
         Is it me you&apos;re looking for? My name is{' '}
         <HighlightedText>Egor Philippov</HighlightedText> and I&apos;m a passionate{' '}
         <HighlightedText>Full Stack Software Engineer</HighlightedText>. I am comfortable working on
-        the server, browser or mobile. You may have heard of me from{' '}
-        <a href="https://score.restaurant" target="_blank" rel="noreferrer">
-          Tomati
-        </a>{' '}
-        or{' '}
-        <a href="http://www.huegasm.com" target="_blank" rel="noreferrer">
-          Huegasm
-        </a>
-        .
+        the server, browser or mobile.
       </PageSection>
 
       <PageSection>
@@ -52,7 +39,7 @@ const Home = () => (
         .
       </PageSection>
     </PageBody>
-  </HomeContainer>
+  </Layout>
 );
 
 const HighlightedText = styled.span`
@@ -62,10 +49,6 @@ const HelloText = styled.span`
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.9em;
-`;
-const HomeContainer = styled.div`
-  background-size: 100px 199px;
-  padding: 12vh 3vw;
 `;
 const PageBody = styled.div`
   font-size: 1.25em;

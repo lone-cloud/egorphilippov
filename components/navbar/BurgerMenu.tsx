@@ -10,7 +10,7 @@ const BurgerMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props) => (
     tabIndex={0}
     role="button"
     onClick={() => setIsNavbarOpen(!isNavbarOpen)}
-    onKeyPress={() => setIsNavbarOpen(!isNavbarOpen)}
+    onKeyDown={() => setIsNavbarOpen(!isNavbarOpen)}
   >
     <div id="menu-toggle" className={isNavbarOpen ? 'open' : ''}>
       <span>&nbsp;</span>

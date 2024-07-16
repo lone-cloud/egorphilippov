@@ -11,11 +11,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #__next {
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
   }
 
   html, body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
     color: ${COLOR_BLACK}
   }
   
