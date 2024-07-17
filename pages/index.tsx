@@ -32,11 +32,7 @@ const Home = () => (
         </span>{' '}
         recruiters/agencies).
         <br />
-        Feel free to{' '}
-        <Link href="/contact" passHref>
-          contact me
-        </Link>
-        .
+        Feel free to <Link href="/contact">contact me</Link>.
       </PageSection>
     </PageBody>
   </Layout>

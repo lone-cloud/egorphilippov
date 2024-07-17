@@ -18,7 +18,7 @@ export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Props) {
     <>
       <NavBar>
         <FlexContainer>
-          <Link href="/" passHref>
+          <Link href="/">
             <NavItem aria-label="Site cloud logo">
               <ImgLogo src="images/logo.jpg" alt="Site cloud logo" />
             </NavItem>
@@ -26,28 +26,28 @@ export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Props) {
 
           <NavLinks>
             <li>
-              <Link href="/" passHref>
+              <Link href="/">
                 <NavItem title="Home" $isActive={pathname === '/'}>
                   Home
                 </NavItem>
               </Link>
             </li>
             <li>
-              <Link href="/blog" passHref>
+              <Link href="/blog">
                 <NavItem title="Blog" $isActive={pathname === '/blog'}>
                   Blog
                 </NavItem>
               </Link>
             </li>
             <li>
-              <Link href="/resume" passHref>
+              <Link href="/resume">
                 <NavItem title="Resumé" $isActive={pathname === '/resume'}>
                   Resumé
                 </NavItem>
               </Link>
             </li>
             <li>
-              <Link href="/contact" passHref>
+              <Link href="/contact">
                 <NavItem title="Contact us" $isActive={pathname === '/contact'}>
                   Contact
                 </NavItem>
