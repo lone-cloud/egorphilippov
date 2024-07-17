@@ -26,12 +26,10 @@ const Home = () => (
         <span role="img" aria-label="check mark">
           ✔️
         </span>{' '}
-        contract{' '}
-        <span role="img" aria-label="cross mark">
-          ❌
-        </span>{' '}
-        recruiters/agencies).
-        <br />
+        contract).
+      </PageSection>
+
+      <PageSection>
         Feel free to <Link href="/contact">contact me</Link>.
       </PageSection>
     </PageBody>
