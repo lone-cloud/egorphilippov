@@ -4,7 +4,6 @@
 module.exports = {
   output: 'export',
   reactStrictMode: true,
-  swcMinify: true,
   experimental: {
     scrollRestoration: true,
   },

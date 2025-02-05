@@ -6,7 +6,6 @@ interface Props {
   children?: ReactNode;
   onClick?: (...args: any[]) => void;
   type?: 'button' | 'submit' | 'reset';
-  as?: undefined;
   isLoading?: boolean;
   isDisabled?: boolean;
 }

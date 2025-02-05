@@ -6,12 +6,12 @@
   "settings": {
     "import/resolver": {
       "typescript": {
-        "project": ["tsconfig.json"]
-      }
+        "project": ["tsconfig.json"],
+      },
     },
     "react": {
-      "version": "detect"
-    }
+      "version": "detect",
+    },
   },
   "extends": [
     "eslint:recommended",
@@ -21,24 +21,24 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking", // Rules requiring type checking that take extra computing power
     "plugin:react-hooks/recommended",
     "plugin:@next/next/recommended",
-    "plugin:styled-components-a11y/recommended"
+    "plugin:styled-components-a11y/recommended",
   ],
   "env": {
     "browser": true,
     "amd": true,
-    "node": true
+    "node": true,
   },
   "globals": {
     "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+    "SharedArrayBuffer": "readonly",
   },
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
     },
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
   },
   "rules": {
     "import/no-duplicates": "error",
@@ -54,21 +54,21 @@
     "@typescript-eslint/no-empty-interface": [
       "error",
       {
-        "allowSingleExtends": true
-      }
+        "allowSingleExtends": true,
+      },
     ],
     "@typescript-eslint/no-misused-promises": [
       "error",
       {
-        "checksVoidReturn": false
-      }
+        "checksVoidReturn": false,
+      },
     ],
     "@typescript-eslint/ban-ts-comment": [
       "error",
       {
         "ts-ignore": "allow-with-description",
-        "minimumDescriptionLength": 10
-      }
+        "minimumDescriptionLength": 10,
+      },
     ],
     "@typescript-eslint/no-redeclare": "error",
     "@typescript-eslint/no-shadow": "warn",
@@ -86,32 +86,35 @@
       "error",
       {
         "component": true,
-        "html": true
-      }
+        "html": true,
+      },
     ],
     "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
     "styled-components-a11y/label-has-for": [
       "error",
       {
         "required": {
-          "some": ["nesting", "id"]
-        }
-      }
+          "some": ["nesting", "id"],
+        },
+      },
     ],
-    "deprecation/deprecation": "error"
+    "deprecation/deprecation": "error",
+    "sonarjs/prefer-read-only-props": "warn",
+    "sonarjs/no-clear-text-protocols": "warn",
+    "sonarjs/todo-tag": "warn",
   },
   "overrides": [
     {
       "files": ["**/*.tsx"],
       "rules": {
-        "react/prop-types": "off"
-      }
+        "react/prop-types": "off",
+      },
     },
     {
       "files": ["**/*.js"],
       "parserOptions": {
-        "project": "./tsconfig.eslint.json"
-      }
-    }
-  ]
+        "project": "./tsconfig.eslint.json",
+      },
+    },
+  ],
 }
