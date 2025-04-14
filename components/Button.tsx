@@ -32,29 +32,37 @@ const ButtonComponent = (
 const StyledButton = styled.button`
   min-width: 8rem;
   background-color: ${({ theme }) => theme.colors.brand};
-  font-size: 1.1em;
-  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.typography.fontSize.base};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+  line-height: ${({ theme }) => theme.typography.lineHeight.normal};
+  color: ${({ theme }) => theme.colors.surface};
   text-align: center;
   user-select: none;
-  border: 1px solid transparent;
-  padding: 0.25rem 0.5rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition:
-    color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  box-shadow: ${({ theme }) => theme.shadows.sm};
+  transform: translateY(0);
+  transition: all 200ms ease;
 
   :focus,
   :hover {
     background-color: ${({ theme }) => darken(0.05, theme.colors.brand)};
+    transform: translateY(-1px);
+    box-shadow: ${({ theme }) => theme.shadows.md};
+  }
+
+  :active {
+    transform: translateY(0);
+    box-shadow: ${({ theme }) => theme.shadows.sm};
   }
 
   :disabled {
     cursor: not-allowed;
     background-color: ${({ theme }) => lighten(0.2, theme.colors.brand)};
+    transform: none;
+    box-shadow: none;
   }
 `;
 

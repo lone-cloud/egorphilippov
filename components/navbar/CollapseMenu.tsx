@@ -114,8 +114,11 @@ const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: CollapseMenuProps) => {
 
 const NavItem = styled.div<{ $isActive?: boolean }>`
   display: flex;
-  padding: 0 ${({ theme }) => theme.spacing.medium};
+  padding: 0 ${({ theme }) => theme.spacing.md};
   color: ${({ $isActive, theme }) => ($isActive ? theme.colors.brand : theme.colors.grey)};
+  font-size: ${({ theme }) => theme.typography.fontSize.base};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+  line-height: ${({ theme }) => theme.typography.lineHeight.normal};
   justify-content: center;
   min-width: 10vw;
 
@@ -125,7 +128,7 @@ const NavItem = styled.div<{ $isActive?: boolean }>`
   }
 `;
 const CollapseWrapper = styled(animated.div)`
-  background: ${({ theme }) => darken(0.05, theme.colors.white)};
+  background: ${({ theme }) => darken(0.05, theme.colors.surface)};
   position: fixed;
   top: 4.5rem;
   left: 0;

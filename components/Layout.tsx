@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { NextSeo } from 'next-seo';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import styled, { css } from 'styled-components';
 
 type LayoutProps = {
@@ -36,20 +36,20 @@ const Container = styled.div<{ $isHome: boolean }>`
     if ($isHome) {
       return css`
         background-size: 100px 199px;
-        padding: 12vh 3vw;
+        padding: 3vh 3vw;
       `;
     }
 
     return css`
       max-width: 60rem;
       margin: auto;
-      margin-top: ${({ theme }) => theme.spacing.medium};
-      padding: ${({ theme }) => `0 ${theme.spacing.large}`};
+      margin-top: ${({ theme }) => theme.spacing.md};
+      padding: ${({ theme }) => `0 ${theme.spacing.lg}`};
 
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        max-width: auto;
-        margin: 0 ${({ theme }) => `0 ${theme.spacing.medium}`};
-        padding: ${({ theme }) => `0 ${theme.spacing.small}`};
+        margin: 0;
+        margin-bottom: ${({ theme }) => theme.spacing.md};
+        padding: ${({ theme }) => `0 ${theme.spacing.sm}`};
       }
     `;
   }}

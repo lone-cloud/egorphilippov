@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, DefaultTheme } from 'styled-components';
 import Head from 'next/head';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { DefaultSeo } from 'next-seo';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'motion/react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
@@ -72,7 +72,7 @@ const MainLayoutContainer = styled.div`
   grid-template-rows: 1fr min-content;
   min-height: 100vh;
 `;
-const StyledMain = styled.main`
+const StyledMain = styled.main<{ theme: DefaultTheme }>`
   padding-top: ${({ theme }) => theme.spacing.navBarHeight};
 `;
 

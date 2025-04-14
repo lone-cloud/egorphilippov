@@ -15,7 +15,7 @@ const Clients = () => (
 );
 
 const ResumeContainer = styled.object`
-  height: 70vh;
+  height: 80vh;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     height: 50vh;

@@ -13,12 +13,14 @@ const Contact = () => {
   return (
     <Layout title="Contact | Egor Philippov" description="A contact form for Egor Philippov.">
       <ContactForm action="https://formspree.io/f/xeqdjarz" method="POST">
+        <FormHeading>Get in touch</FormHeading>
         <FormGroup>
           <FormLabel htmlFor="email">Email</FormLabel>
           <EmailInput
             id="email"
             name="email"
             type="email"
+            placeholder="your@email.com"
             onChange={(e) => setEmail(e.target.value)}
           />
         </FormGroup>
@@ -28,13 +30,14 @@ const Contact = () => {
           <MessageInput
             id="message"
             name="message"
-            rows={3}
+            rows={5}
+            placeholder="What would you like to discuss?"
             onChange={(e) => setMessage(e.target.value)}
           />
         </FormGroup>
 
         <Button isDisabled={!isSubmitEnabled} type="submit">
-          Submit
+          Send Message
         </Button>
       </ContactForm>
     </Layout>
@@ -42,50 +45,70 @@ const Contact = () => {
 };
 
 const ContactForm = styled.form`
-  margin: 0 10vw;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 2rem;
+  background: ${({ theme }) => theme.colors.white};
+  border-radius: 8px;
+  box-shadow: ${({ theme }) => theme.shadows.small};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    margin: 0 3vw;
+    margin: 0 1rem;
+    padding: 1.5rem;
   }
 `;
+
+const FormHeading = styled.h1`
+  margin-bottom: 2rem;
+  color: ${({ theme }) => theme.colors.black};
+  font-size: ${({ theme }) => theme.typography.fontSize['3xl']};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
+  line-height: ${({ theme }) => theme.typography.lineHeight.tight};
+`;
+
 const formControl = css`
   display: block;
-  height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
-  line-height: 1.5;
-  color: #495057;
-  background-color: ${({ theme }) => lighten(0.3, theme.colors.white)};
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: ${({ theme }) => theme.typography.fontSize.base};
+  line-height: ${({ theme }) => theme.typography.lineHeight.normal};
+  color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.white};
   background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  transition:
-    border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  border: 2px solid ${({ theme }) => theme.colors.greyLight};
+  border-radius: 8px;
+  transition: all 200ms ease;
 
-  :focus {
-    color: #495057;
-    background-color: ${({ theme }) => lighten(0.3, theme.colors.white)};
-    border-color: ${({ theme }) => lighten(0.3, theme.colors.brand)};
-    outline: 0;
-    box-shadow: 0 0 0 0.1rem ${({ theme }) => lighten(0.3, theme.colors.brand)};
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.grey};
+  }
+
+  &:focus {
+    outline: none;
+    border-color: ${({ theme }) => theme.colors.brand};
+    box-shadow: 0 0 0 3px ${({ theme }) => lighten(0.4, theme.colors.brand)};
   }
 `;
+
 const FormLabel = styled.label`
   display: block;
-  margin-bottom: ${({ theme }) => theme.spacing.medium};
-  margin-top: ${({ theme }) => theme.spacing.small};
+  margin-bottom: 0.5rem;
+  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+  color: ${({ theme }) => theme.colors.black};
 `;
-const MessageInput = styled.textarea`
-  ${formControl};
 
-  height: auto;
+const MessageInput = styled.textarea`
+  ${formControl}
+  resize: vertical;
+  min-height: 120px;
 `;
+
 const EmailInput = styled.input`
   ${formControl}
 `;
+
 const FormGroup = styled.div`
-  display: grid;
-  margin-bottom: ${({ theme }) => theme.spacing.medium};
+  margin-bottom: 1.5rem;
 `;
 
 export default Contact;

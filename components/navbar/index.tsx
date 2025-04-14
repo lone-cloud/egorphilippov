@@ -8,10 +8,10 @@ import CollapseMenu from './CollapseMenu';
 
 interface Props {
   isNavbarOpen: boolean;
-  setIsNavbarOpen: (...args: any[]) => void;
+  setIsNavbarOpen: (isOpen: boolean) => void;
 }
 
-export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Props) {
+export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Readonly<Props>) {
   const { pathname } = useRouter();
 
   return (
@@ -68,9 +68,11 @@ export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Props) {
 
 const NavItem = styled.div<{ $isActive?: boolean }>`
   display: flex;
-  padding: 0 ${({ theme }) => theme.spacing.medium};
+  padding: 0 ${({ theme }) => theme.spacing.md};
   color: ${({ $isActive, theme }) => ($isActive ? theme.colors.brand : theme.colors.grey)};
-  align-items: center;
+  font-size: ${({ theme }) => theme.typography.fontSize.base};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+  line-height: ${({ theme }) => theme.typography.lineHeight.normal};
 
   :hover {
     color: ${({ $isActive, theme }) =>
@@ -81,41 +83,45 @@ const NavItem = styled.div<{ $isActive?: boolean }>`
     padding: 0;
   }
 `;
+
 const NavBar = styled.nav`
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1;
+  background: ${({ theme }) => theme.colors.surface};
+  box-shadow: ${({ theme }) => theme.shadows.sm};
 `;
 const FlexContainer = styled.div`
   max-width: 120rem;
   display: flex;
   margin: auto;
   justify-content: space-between;
-  padding: 0 ${({ theme }) => theme.spacing.medium};
+  padding: 0 ${({ theme }) => theme.spacing.md};
   height: ${({ theme }) => theme.spacing.navBarHeight};
-  background: ${({ theme }) => theme.colors.white};
+  background: transparent;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: ${({ theme }) => `0 ${theme.spacing.small}`};
+    padding: ${({ theme }) => `0 ${theme.spacing.sm}`};
   }
 `;
+
 const NavLinks = styled.ul`
-  justify-self: end;
   list-style-type: none;
   margin: auto 0;
   display: flex;
-  align-items: center;
 
   a {
     text-decoration: none;
+    border-bottom: none;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: none;
   }
 `;
+
 const BurgerWrapper = styled.div`
   margin: auto 0;
 
@@ -123,12 +129,12 @@ const BurgerWrapper = styled.div`
     display: none;
   }
 `;
+
 const ImgLogo = styled.img`
   width: 3.75rem;
   height: 3.75rem;
-  border-radius: 3.75rem;
-  border: 2px solid ${({ theme }) => theme.colors.white};
-  transition-duration: 0.3s;
+  border-radius: 50%;
+  margin-top: 0.15rem;
 
   :focus,
   :hover {
