@@ -1,6 +1,5 @@
 import { forwardRef, ReactNode, Ref, MouseEvent } from 'react';
-import styled from 'styled-components';
-import { darken, lighten } from 'polished';
+import { cn } from '@/lib/utils';
 
 interface Props {
   children?: ReactNode;
@@ -8,13 +7,15 @@ interface Props {
   type?: 'button' | 'submit' | 'reset';
   isLoading?: boolean;
   isDisabled?: boolean;
+  variant?: 'primary' | 'secondary';
+  className?: string;
 }
 
 const ButtonComponent = (
-  { children, onClick, isDisabled, isLoading, ...props }: Props,
+  { children, onClick, isDisabled, isLoading, variant = 'primary', className, ...props }: Props,
   ref: Ref<HTMLButtonElement>,
 ) => (
-  <StyledButton
+  <button
     ref={ref}
     onClick={(e: MouseEvent<HTMLButtonElement>) => {
       const isClickable = !isDisabled && !isLoading;
@@ -23,48 +24,27 @@ const ButtonComponent = (
       }
     }}
     disabled={isDisabled || isLoading}
+    className={cn(
+      // Base styles
+      'min-w-32 text-base font-medium leading-normal text-center select-none border-none py-3 px-6 rounded-lg cursor-pointer shadow-sm transform translate-y-0 transition-all duration-200',
+      // Variant styles
+      variant === 'primary' && 'bg-blue-600 text-white hover:bg-blue-700 focus:bg-blue-700',
+      variant === 'secondary' && 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:bg-gray-300',
+      // Hover/focus effects
+      'hover:-translate-y-0.5 hover:shadow-md focus:-translate-y-0.5 focus:shadow-md',
+      // Active state
+      'active:translate-y-0 active:shadow-sm',
+      // Disabled state
+      'disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none',
+      variant === 'primary' && 'disabled:bg-blue-300',
+      variant === 'secondary' && 'disabled:bg-gray-100',
+      className,
+    )}
     {...props}
   >
     {children}
-  </StyledButton>
+  </button>
 );
-
-const StyledButton = styled.button`
-  min-width: 8rem;
-  background-color: ${({ theme }) => theme.colors.brand};
-  font-size: ${({ theme }) => theme.typography.fontSize.base};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  line-height: ${({ theme }) => theme.typography.lineHeight.normal};
-  color: ${({ theme }) => theme.colors.surface};
-  text-align: center;
-  user-select: none;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: ${({ theme }) => theme.shadows.sm};
-  transform: translateY(0);
-  transition: all 200ms ease;
-
-  :focus,
-  :hover {
-    background-color: ${({ theme }) => darken(0.05, theme.colors.brand)};
-    transform: translateY(-1px);
-    box-shadow: ${({ theme }) => theme.shadows.md};
-  }
-
-  :active {
-    transform: translateY(0);
-    box-shadow: ${({ theme }) => theme.shadows.sm};
-  }
-
-  :disabled {
-    cursor: not-allowed;
-    background-color: ${({ theme }) => lighten(0.2, theme.colors.brand)};
-    transform: none;
-    box-shadow: none;
-  }
-`;
 
 const Button = forwardRef(ButtonComponent);
 

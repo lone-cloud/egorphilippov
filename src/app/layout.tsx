@@ -1,11 +1,10 @@
 import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
 
-import StyledComponentsRegistry from './registry';
-import LayoutContent from './layout-content';
+import '@/styles/globals.css';
 
-import '@fontsource/roboto';
-import '@fortawesome/fontawesome-svg-core/styles.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 // This metadata will be used as the default for all pages
 export const metadata: Metadata = {
@@ -51,9 +50,13 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
-        <StyledComponentsRegistry>
-          <LayoutContent>{children}</LayoutContent>
-        </StyledComponentsRegistry>
+        <div className="grid grid-rows-[1fr_min-content] min-h-screen bg-gray-50">
+          <Navbar />
+
+          <main className="pt-16">{children}</main>
+
+          <Footer />
+        </div>
       </body>
     </html>
   );

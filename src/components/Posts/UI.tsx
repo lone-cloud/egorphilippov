@@ -1,69 +1,38 @@
-import styled from 'styled-components';
+interface ComponentProps {
+  children: React.ReactNode;
+}
 
-export const Italic = styled.span`
-  font-style: italic;
-`;
+interface BlogEntryProps extends ComponentProps {
+  id?: string;
+}
 
-export const Spacer = styled.div`
-  height: ${({ theme }) => theme.spacing.sm};
-`;
+export const Italic = ({ children }: ComponentProps) => <span className="italic">{children}</span>;
 
-export const EntryBody = styled.div`
-  padding-top: 80px;
-  margin-top: -80px;
-  line-height: ${({ theme }) => theme.typography.lineHeight.relaxed};
-  font-size: ${({ theme }) => theme.typography.fontSize.lg};
+export const Spacer = () => <div className="h-4" />;
 
-  ul,
-  ol {
-    margin: 1.5rem 0;
-  }
+export const EntryBody = ({ children }: ComponentProps) => (
+  <div className="pt-20 -mt-20 leading-relaxed text-lg prose prose-lg max-w-none">{children}</div>
+);
 
-  ul > li {
-    list-style-type: disc;
-    margin-left: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
+export const EntryTitle = ({ children }: ComponentProps) => (
+  <h2 className="text-blue-600 text-3xl font-bold leading-tight transition-colors duration-200">
+    {children}
+  </h2>
+);
 
-  ol > li {
-    list-style-type: decimal;
-    margin-left: 2rem;
-    margin-bottom: 0.5rem;
-  }
-`;
+export const SubTitle = ({ children }: ComponentProps) => (
+  <h3 className="mt-1 text-2xl font-semibold leading-tight text-gray-900">{children}</h3>
+);
 
-export const EntryTitle = styled.h2`
-  color: ${({ theme }) => theme.colors.brand};
-  font-size: ${({ theme }) => theme.typography.fontSize['3xl']};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  line-height: ${({ theme }) => theme.typography.lineHeight.tight};
-  transition: color 200ms ease;
-`;
+export const EntryDate = ({ children }: ComponentProps) => (
+  <p className="mt-4 text-sm text-gray-500">{children}</p>
+);
 
-export const SubTitle = styled.h3`
-  margin-top: 0.25rem;
-  font-size: ${({ theme }) => theme.typography.fontSize['2xl']};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
-  line-height: ${({ theme }) => theme.typography.lineHeight.tight};
-  color: ${({ theme }) => theme.colors.black};
-`;
-
-export const EntryDate = styled.p`
-  margin-top: ${({ theme }) => theme.spacing.sm};
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  color: ${({ theme }) => theme.colors.grey};
-`;
-
-export const BlogEntry = styled.div`
-  scroll-margin-top: 80px;
-  padding: 2rem;
-  margin: 2rem 0;
-  border-radius: 8px;
-  background: ${({ theme }) => theme.colors.white};
-  box-shadow: ${({ theme }) => theme.shadows.sm};
-  transition: box-shadow 200ms ease;
-
-  &:hover {
-    box-shadow: ${({ theme }) => theme.shadows.md};
-  }
-`;
+export const BlogEntry = ({ children, id }: BlogEntryProps) => (
+  <div
+    id={id}
+    className="scroll-mt-20 p-8 my-8 rounded-lg bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+  >
+    {children}
+  </div>
+);

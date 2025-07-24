@@ -1,20 +1,30 @@
 import { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons';
-import styled from 'styled-components';
-import { motion, AnimatePresence } from 'motion/react';
+import { IoArrowUp } from 'react-icons/io5';
 
 function ToTopButton() {
   const [isArrowVisible, setIsArrowVisible] = useState(false);
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      setIsArrowVisible(window.scrollY > 300);
+      const shouldShow = window.scrollY > 300;
+
+      if (shouldShow && !isArrowVisible) {
+        setIsArrowVisible(true);
+        setIsAnimatingOut(false);
+      } else if (!shouldShow && isArrowVisible) {
+        setIsAnimatingOut(true);
+
+        window.setTimeout(() => {
+          setIsArrowVisible(false);
+          setIsAnimatingOut(false);
+        }, 200);
+      }
     };
 
     document.addEventListener('scroll', onScroll);
     return () => document.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [isArrowVisible]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -24,64 +34,22 @@ function ToTopButton() {
   };
 
   return (
-    <AnimatePresence>
+    <>
       {isArrowVisible && (
-        <ToTopButtonContainer
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.5 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+        <button
           onClick={scrollToTop}
+          className={`fixed bottom-8 right-8 bg-blue-600 text-white border-none rounded-full py-3 px-5 cursor-pointer shadow-md transition-all duration-200 hover:bg-gray-900 hover:scale-110 active:scale-90 sm:bottom-6 sm:right-6 ${
+            isAnimatingOut ? 'animate-scale-out' : 'animate-scale-in opacity-0'
+          }`}
         >
-          <ButtonContent>
-            <StyledFontAwesomeIcon icon={faArrowAltCircleUp} aria-label="Scroll to top" />
-            <ButtonText>Top</ButtonText>
-          </ButtonContent>
-        </ToTopButtonContainer>
+          <div className="flex items-center gap-2">
+            <IoArrowUp size={16} aria-label="Scroll to top" />
+            <span className="text-sm font-medium uppercase tracking-wide">Top</span>
+          </div>
+        </button>
       )}
-    </AnimatePresence>
+    </>
   );
 }
-
-const ToTopButtonContainer = styled(motion.button)`
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: ${({ theme }) => theme.colors.brand};
-  color: ${({ theme }) => theme.colors.white};
-  border: none;
-  border-radius: 50px;
-  padding: 0.75rem 1.25rem;
-  cursor: pointer;
-  box-shadow: ${({ theme }) => theme.shadows.md};
-  transition: background-color 200ms ease;
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.black};
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    bottom: 1.5rem;
-    right: 1.5rem;
-  }
-`;
-
-const ButtonContent = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-`;
-
-const ButtonText = styled.span`
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-`;
-
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  font-size: ${({ theme }) => theme.typography.fontSize.base};
-`;
 
 export default ToTopButton;

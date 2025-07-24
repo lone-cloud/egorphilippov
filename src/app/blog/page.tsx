@@ -1,105 +1,43 @@
 'use client';
 
-import styled from 'styled-components';
-import { motion } from 'motion/react';
-
 import ToTopButton from '@/components/ToTopButton';
 import blogPosts from '@/components/Posts';
 import PageTitle from '@/components/PageTitle';
 
 export default function BlogPage() {
   return (
-    <BlogContainer>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+    <div className="max-w-4xl mx-auto p-8 relative sm:p-4">
+      <div className="animate-fade-in-down">
         <PageTitle title="Latest posts" />
-        <BlogIndex>
-          {blogPosts.map(({ year, metas }) => (
-            <BlogIndexYear key={year}>
-              <YearTitle>{year}</YearTitle>
-              <PostsList>
-                {metas.map(({ id, title }) => (
-                  <li key={id}>
-                    <BlogEntryLink href={`#${id}`}>{title}</BlogEntryLink>
-                  </li>
-                ))}
-              </PostsList>
-            </BlogIndexYear>
-          ))}
-        </BlogIndex>
+      </div>
 
-        <PostsContainer>
-          {blogPosts.map(({ year, posts }) =>
-            posts.map((Post, i) => <Post key={`${year}-post-${i}`} />),
-          )}
-        </PostsContainer>
-      </motion.div>
+      <div className="bg-white rounded-xl p-8 mb-12 shadow-sm animate-fade-in-down-delay-1 opacity-0">
+        {blogPosts.map(({ year, metas }) => (
+          <div key={year} className="[&:not(:last-child)]:mb-8">
+            <h2 className="text-2xl font-semibold leading-tight text-blue-600 mb-4">{year}</h2>
+            <ul className="list-none p-0">
+              {metas.map(({ id, title }) => (
+                <li key={id}>
+                  <a
+                    href={`#${id}`}
+                    className="inline-block text-gray-900 text-lg font-medium leading-normal no-underline py-2 transition-all duration-200 border-b-2 border-transparent hover:text-blue-600 hover:border-current"
+                  >
+                    {title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div className="[&>div]:mb-12 animate-fade-in-down-delay-2 opacity-0">
+        {blogPosts.map(({ year, posts }) =>
+          posts.map((Post, i) => <Post key={`${year}-post-${i}`} />),
+        )}
+      </div>
 
       <ToTopButton />
-    </BlogContainer>
+    </div>
   );
 }
-
-const BlogContainer = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  position: relative;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: 1rem;
-  }
-`;
-
-const BlogIndex = styled.div`
-  background: ${({ theme }) => theme.colors.white};
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 3rem;
-  box-shadow: ${({ theme }) => theme.shadows.sm};
-`;
-
-const BlogIndexYear = styled.div`
-  &:not(:last-child) {
-    margin-bottom: 2rem;
-  }
-`;
-
-const YearTitle = styled.h2`
-  font-size: ${({ theme }) => theme.typography.fontSize['2xl']};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
-  line-height: ${({ theme }) => theme.typography.lineHeight.tight};
-  color: ${({ theme }) => theme.colors.brand};
-  margin-bottom: 1rem;
-`;
-
-const PostsList = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
-const BlogEntryLink = styled.a`
-  display: inline-block;
-  color: ${({ theme }) => theme.colors.black};
-  font-size: ${({ theme }) => theme.typography.fontSize.lg};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  line-height: ${({ theme }) => theme.typography.lineHeight.normal};
-  text-decoration: none;
-  padding: 0.5rem 0;
-  transition: all 200ms ease;
-  border-bottom: 2px solid transparent;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.brand};
-    border-bottom-color: currentcolor;
-  }
-`;
-
-const PostsContainer = styled.div`
-  > div {
-    margin-bottom: 3rem;
-  }
-`;

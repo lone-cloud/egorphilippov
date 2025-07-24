@@ -1,129 +1,56 @@
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { darken } from 'polished';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const year = new Date().getFullYear();
 
 const Footer = () => (
-  <StyledFooter>
-    <FooterContent>
-      <SocialSection>
-        <FindMeText>Find me on</FindMeText>
-        <SocialLinks>
-          <SocialLink
+  <footer className="p-8 bg-white shadow-sm mt-8">
+    <div className="max-w-6xl mx-auto flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-4">
+        <span className="uppercase font-semibold text-sm tracking-wide text-gray-500">
+          Find me on
+        </span>
+        <div className="flex gap-6">
+          <a
             href="https://github.com/lone-cloud"
             rel="noreferrer"
             target="_blank"
             aria-label="GitHub"
+            className="flex items-center gap-2 py-2 px-4 rounded-lg text-gray-900 bg-transparent transition-all duration-200 hover:text-blue-600 hover:bg-gray-200 hover:-translate-y-0.5"
           >
-            <StyledFontAwesomeIcon icon={faGithub} size="lg" />
-            <SocialLinkText>GitHub</SocialLinkText>
-          </SocialLink>
+            <FaGithub size={20} className="transition-transform duration-200" />
+            <span className="text-sm font-medium">GitHub</span>
+          </a>
 
-          <SocialLink
+          <a
             href="https://www.linkedin.com/in/egor-philippov"
             rel="noreferrer"
             target="_blank"
             aria-label="LinkedIn"
+            className="flex items-center gap-2 py-2 px-4 rounded-lg text-gray-900 bg-transparent transition-all duration-200 hover:text-blue-600 hover:bg-gray-200 hover:-translate-y-0.5"
           >
-            <StyledFontAwesomeIcon icon={faLinkedin} size="lg" />
-            <SocialLinkText>LinkedIn</SocialLinkText>
-          </SocialLink>
-        </SocialLinks>
-      </SocialSection>
+            <FaLinkedin size={20} className="transition-transform duration-200" />
+            <span className="text-sm font-medium">LinkedIn</span>
+          </a>
+        </div>
+      </div>
 
-      <Copyright>
+      <div className="text-center text-gray-500 text-sm leading-normal">
         Forged with{' '}
         <span role="img" aria-label="hot fire burning">
           🔥
         </span>{' '}
         ©{year}{' '}
-        <ForgedLink href="https://www.nidratech.com/" target="_blank">
+        <a
+          href="https://www.nidratech.com/"
+          target="_blank"
+          className="text-blue-600 font-medium transition-all duration-200 hover:text-blue-700"
+          rel="noreferrer"
+        >
           Nidratech Ltd.
-        </ForgedLink>
-      </Copyright>
-    </FooterContent>
-  </StyledFooter>
+        </a>
+      </div>
+    </div>
+  </footer>
 );
-
-const StyledFooter = styled.footer`
-  padding: ${({ theme }) => theme.spacing.lg};
-  background: ${({ theme }) => theme.colors.surface};
-  box-shadow: ${({ theme }) => theme.shadows.sm};
-  margin-top: 2rem;
-`;
-
-const FooterContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-`;
-
-const SocialSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-`;
-
-const FindMeText = styled.span`
-  text-transform: uppercase;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  letter-spacing: 1px;
-  color: ${({ theme }) => theme.colors.grey};
-`;
-
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 1.5rem;
-`;
-
-const SocialLink = styled.a`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  color: ${({ theme }) => theme.colors.text};
-  background: transparent;
-  transition: all 200ms ease;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.brand};
-    background: ${({ theme }) => theme.colors.greyLight};
-    transform: translateY(-2px);
-  }
-`;
-
-const SocialLinkText = styled.span`
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-`;
-
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  transition: transform 200ms ease;
-`;
-
-const Copyright = styled.div`
-  text-align: center;
-  color: ${({ theme }) => theme.colors.grey};
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  line-height: ${({ theme }) => theme.typography.lineHeight.normal};
-`;
-
-const ForgedLink = styled.a`
-  color: ${({ theme }) => theme.colors.brand};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  transition: all 200ms ease;
-
-  &:hover {
-    color: ${({ theme }) => darken(0.1, theme.colors.brand)};
-  }
-`;
 
 export default Footer;

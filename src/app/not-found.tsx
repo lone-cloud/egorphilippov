@@ -1,58 +1,22 @@
 'use client';
 
-import styled from 'styled-components';
 import Link from 'next/link';
-import { darken } from 'polished';
 
 export default function NotFound() {
   return (
-    <Container>
-      <Content>
-        <Title>404 - Page Not Found</Title>
-        <Description>Sorry, the page you are looking for doesn&apos;t exist.</Description>
-        <HomeLink href="/">Return Home</HomeLink>
-      </Content>
-    </Container>
+    <div className="min-h-[60vh] flex items-center justify-center p-8">
+      <div className="text-center max-w-lg">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">404 - Page Not Found</h1>
+        <p className="text-lg text-gray-500 mb-8">
+          Sorry, the page you are looking for doesn&apos;t exist.
+        </p>
+        <Link
+          href="/"
+          className="inline-block py-3 px-6 bg-blue-600 text-white no-underline rounded-lg font-medium transition-colors duration-200 hover:bg-blue-700"
+        >
+          Return Home
+        </Link>
+      </div>
+    </div>
   );
 }
-
-const Container = styled.div`
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-`;
-
-const Content = styled.div`
-  text-align: center;
-  max-width: 500px;
-`;
-
-const Title = styled.h1`
-  font-size: ${({ theme }) => theme.typography.fontSize['4xl']};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 1rem;
-`;
-
-const Description = styled.p`
-  font-size: ${({ theme }) => theme.typography.fontSize.lg};
-  color: ${({ theme }) => theme.colors.grey};
-  margin-bottom: 2rem;
-`;
-
-const HomeLink = styled(Link)`
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: ${({ theme }) => theme.colors.brand};
-  color: white;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  transition: background-color 0.2s ease;
-
-  &:hover {
-    background: ${({ theme }) => darken(0.1, theme.colors.brand)};
-  }
-`;

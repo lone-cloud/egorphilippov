@@ -1,9 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import styled, { css } from 'styled-components';
-import { lighten } from 'polished';
-import { motion } from 'motion/react';
 
 import PageTitle from '@/components/PageTitle';
 import Button from '@/components/Button';
@@ -14,105 +11,46 @@ export default function Contact() {
   const isSubmitEnabled = email.length > 2 && message.length > 2;
 
   return (
-    <ContactContainer>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+    <div className="max-w-4xl mx-auto p-8 relative sm:p-4 animate-fade-in-down">
+      <PageTitle title="Get in touch" />
+
+      <form
+        action="https://formspree.io/f/xeqdjarz"
+        method="POST"
+        className="mx-auto rounded-xl p-8 bg-white shadow-sm"
       >
-        <PageTitle title="Get in touch" />
-        <ContactForm action="https://formspree.io/f/xeqdjarz" method="POST">
-          <FormGroup>
-            <FormLabel htmlFor="email">Email</FormLabel>
-            <EmailInput
-              id="email"
-              name="email"
-              type="email"
-              placeholder="your@email.com"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </FormGroup>
+        <div className="mb-6">
+          <label htmlFor="email" className="block mb-2 font-medium text-gray-900">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="your@email.com"
+            onChange={(e) => setEmail(e.target.value)}
+            className="block w-full py-3 px-4 text-base leading-normal text-gray-900 bg-white border-2 border-gray-200 rounded-lg transition-all duration-200 placeholder:text-gray-500 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_0_3px_rgba(59,130,246,0.1)]"
+          />
+        </div>
 
-          <FormGroup>
-            <FormLabel htmlFor="message">Message</FormLabel>
-            <MessageInput
-              id="message"
-              name="message"
-              rows={5}
-              placeholder="What would you like to discuss?"
-              onChange={(e) => setMessage(e.target.value)}
-            />
-          </FormGroup>
+        <div className="mb-6">
+          <label htmlFor="message" className="block mb-2 font-medium text-gray-900">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
+            placeholder="What would you like to discuss?"
+            onChange={(e) => setMessage(e.target.value)}
+            className="block w-full py-3 px-4 text-base leading-normal text-gray-900 bg-white border-2 border-gray-200 rounded-lg transition-all duration-200 resize-y min-h-[120px] placeholder:text-gray-500 focus:outline-none focus:border-blue-600 focus:shadow-[0_0_0_3px_rgba(59,130,246,0.1)]"
+          />
+        </div>
 
-          <Button isDisabled={!isSubmitEnabled} type="submit">
-            Send Message
-          </Button>
-        </ContactForm>
-      </motion.div>
-    </ContactContainer>
+        <Button isDisabled={!isSubmitEnabled} type="submit">
+          Send Message
+        </Button>
+      </form>
+    </div>
   );
 }
-
-const ContactContainer = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  position: relative;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: 1rem;
-  }
-`;
-
-const ContactForm = styled.form`
-  margin: 0 auto;
-  border-radius: 12px;
-  padding: 2rem;
-  background: ${({ theme }) => theme.colors.white};
-  box-shadow: ${({ theme }) => theme.shadows.sm};
-`;
-
-const formControl = css`
-  display: block;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: ${({ theme }) => theme.typography.fontSize.base};
-  line-height: ${({ theme }) => theme.typography.lineHeight.normal};
-  color: ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.colors.white};
-  background-clip: padding-box;
-  border: 2px solid ${({ theme }) => theme.colors.greyLight};
-  border-radius: 8px;
-  transition: all 200ms ease;
-
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.grey};
-  }
-
-  &:focus {
-    outline: none;
-    border-color: ${({ theme }) => theme.colors.brand};
-    box-shadow: 0 0 0 3px ${({ theme }) => lighten(0.4, theme.colors.brand)};
-  }
-`;
-
-const FormLabel = styled.label`
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  color: ${({ theme }) => theme.colors.black};
-`;
-
-const MessageInput = styled.textarea`
-  ${formControl}
-  resize: vertical;
-  min-height: 120px;
-`;
-
-const EmailInput = styled.input`
-  ${formControl}
-`;
-
-const FormGroup = styled.div`
-  margin-bottom: 1.5rem;
-`;

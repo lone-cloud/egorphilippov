@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Custom CSS variables for consistent theming */
+    --color-primary: 59 130 246; /* blue-600 */
+    --color-secondary: 75 85 99; /* gray-600 */
+    --border-radius: 0.5rem;
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  }
+}
+
+@layer components {
+  /* Add any custom component styles here if needed */
+}
+
+@layer utilities {
+  /* Add any custom utility classes here if needed */
+}

@@ -1,175 +1,48 @@
 'use client';
 
-import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
-import { motion } from 'motion/react';
-
-const fadeInUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const variants = {
-  hidden: { opacity: 0, x: 0, y: 0 },
-  enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: 0, y: 0 },
-};
 
 export default function Home() {
   return (
-    <Container>
-      <motion.main
-        initial="hidden"
-        animate="enter"
-        exit="exit"
-        variants={variants}
-        transition={{ duration: 0.3 }}
-      >
-        <PageBody>
-          <ContentSection>
-            <HelloText>👋 Hello</HelloText>
+    <div className="min-h-[80vh] flex items-center justify-center px-8 mt-8  animate-fade-in-down">
+      <div className="max-w-4xl p-8 rounded-2xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+        <div className="uppercase font-bold text-lg tracking-[2px] text-gray-500 mb-8 inline-block py-2 px-4 bg-gray-200/25 rounded-lg">
+          👋 Hello
+        </div>
 
-            <MainText>
-              Is it me you&apos;re looking for? My name is{' '}
-              <HighlightedText>Egor Philippov</HighlightedText> and I&apos;m a passionate{' '}
-              <HighlightedText>Full Stack Software Engineer</HighlightedText>. I am comfortable
-              working on the server, browser or mobile.
-            </MainText>
+        <div className="text-xl leading-relaxed mb-4 text-gray-900 sm:leading-normal">
+          Is it me you&apos;re looking for? My name is{' '}
+          <span className="text-blue-600 relative whitespace-nowrap font-semibold hover:after:scale-x-100 after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:scale-x-0 after:transition-transform after:duration-300">
+            Egor Philippov
+          </span>{' '}
+          and I&apos;m a passionate{' '}
+          <span className="text-blue-600 relative whitespace-nowrap font-semibold hover:after:scale-x-100 after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:scale-x-0 after:transition-transform after:duration-300">
+            Full Stack Software Engineer
+          </span>
+          . I am comfortable working on the server, browser or mobile.
+        </div>
 
-            <MainText>
-              I am always looking for exciting new opportunities <Badge>✔️ remote</Badge>{' '}
-              <Badge>✔️ contract</Badge>
-            </MainText>
+        <div className="text-xl leading-relaxed mb-4 text-gray-900 sm:leading-normal">
+          I am always looking for exciting new opportunities{' '}
+          <span className="inline-flex items-center bg-gray-200 py-2 px-4 rounded-full text-base font-medium mx-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-600/20">
+            ✔️ remote
+          </span>{' '}
+          <span className="inline-flex items-center bg-gray-200 py-2 px-4 rounded-full text-base font-medium mx-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-600/20">
+            ✔️ contract
+          </span>
+        </div>
 
-            <ContactLink>
-              Feel free to <Link href="/contact">contact me</Link>.
-            </ContactLink>
-          </ContentSection>
-        </PageBody>
-      </motion.main>
-    </Container>
+        <div className="text-xl">
+          Feel free to{' '}
+          <Link
+            href="/contact"
+            className="font-semibold text-blue-600 no-underline relative pb-0.5 hover:after:scale-x-100 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:scale-x-0 after:transition-transform after:duration-300"
+          >
+            contact me
+          </Link>
+          .
+        </div>
+      </div>
+    </div>
   );
 }
-
-const Container = styled.div`
-  background-size: 100px 199px;
-`;
-
-const PageBody = styled.div`
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 2rem;
-  background: ${({ theme }) => theme.colors.background};
-`;
-
-const ContentSection = styled.div`
-  max-width: 800px;
-  animation: ${fadeInUp} 0.8s ease-out;
-  padding: 2rem;
-  border-radius: 1rem;
-  background: ${({ theme }) => theme.colors.surface};
-  box-shadow: 0 4px 20px rgb(0 0 0 / 6%);
-`;
-
-const HelloText = styled.div`
-  text-transform: uppercase;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  font-size: ${({ theme }) => theme.typography.fontSize.lg};
-  letter-spacing: 2px;
-  color: ${({ theme }) => theme.colors.grey};
-  margin-bottom: 2.5rem;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: ${({ theme }) => `${theme.colors.greyLight}40`};
-  border-radius: 0.5rem;
-`;
-
-const MainText = styled.div`
-  font-size: ${({ theme }) => theme.typography.fontSize.xl};
-  line-height: ${({ theme }) => theme.typography.lineHeight.relaxed};
-  margin-bottom: 1.5rem;
-  color: ${({ theme }) => theme.colors.text};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    line-height: ${({ theme }) => theme.typography.lineHeight.normal};
-  }
-`;
-
-const Badge = styled.span`
-  display: inline-flex;
-  align-items: center;
-  background: ${({ theme }) => theme.colors.greyLight};
-  padding: 0.4rem 1rem;
-  border-radius: ${({ theme }) => theme.borderRadius.full};
-  font-size: ${({ theme }) => theme.typography.fontSize.base};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  margin: 0 0.5rem;
-  transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
-
-  &:hover {
-    transform: translateY(-1px);
-    background: ${({ theme }) => theme.colors.brand}20;
-  }
-`;
-
-const HighlightedText = styled.span`
-  color: ${({ theme }) => theme.colors.brand};
-  position: relative;
-  white-space: nowrap;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: ${({ theme }) => theme.colors.brand};
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-
-  &:hover::after {
-    transform: scaleX(1);
-  }
-`;
-
-const ContactLink = styled.div`
-  font-size: ${({ theme }) => theme.typography.fontSize.xl};
-  margin-top: 2.5rem;
-
-  a {
-    font-weight: 600;
-    color: ${({ theme }) => theme.colors.brand};
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 2px;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: ${({ theme }) => theme.colors.brand};
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    &:hover::after {
-      transform: scaleX(1);
-    }
-  }
-`;
