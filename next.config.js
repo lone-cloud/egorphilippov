@@ -12,4 +12,5 @@ module.exports = {
     removeConsole: true,
     styledComponents: { fileName: false },
   },
+  trailingSlash: true,
 };

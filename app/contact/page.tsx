@@ -1,51 +1,50 @@
+'use client';
+
 import { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 
 import Button from 'components/Button';
-import Layout from 'components/Layout';
 
-const Contact = () => {
+export default function Contact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const isSubmitEnabled = email.length > 2 && message.length > 2;
 
   return (
-    <Layout title="Contact | Egor Philippov" description="A contact form for Egor Philippov.">
-      <ContactForm action="https://formspree.io/f/xeqdjarz" method="POST">
-        <FormHeading>Get in touch</FormHeading>
-        <FormGroup>
-          <FormLabel htmlFor="email">Email</FormLabel>
-          <EmailInput
-            id="email"
-            name="email"
-            type="email"
-            placeholder="your@email.com"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </FormGroup>
+    <ContactForm action="https://formspree.io/f/xeqdjarz" method="POST">
+      <FormHeading>Get in touch</FormHeading>
+      <FormGroup>
+        <FormLabel htmlFor="email">Email</FormLabel>
+        <EmailInput
+          id="email"
+          name="email"
+          type="email"
+          placeholder="your@email.com"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </FormGroup>
 
-        <FormGroup>
-          <FormLabel htmlFor="message">Message</FormLabel>
-          <MessageInput
-            id="message"
-            name="message"
-            rows={5}
-            placeholder="What would you like to discuss?"
-            onChange={(e) => setMessage(e.target.value)}
-          />
-        </FormGroup>
+      <FormGroup>
+        <FormLabel htmlFor="message">Message</FormLabel>
+        <MessageInput
+          id="message"
+          name="message"
+          rows={5}
+          placeholder="What would you like to discuss?"
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </FormGroup>
 
-        <Button isDisabled={!isSubmitEnabled} type="submit">
-          Send Message
-        </Button>
-      </ContactForm>
-    </Layout>
+      <Button isDisabled={!isSubmitEnabled} type="submit">
+        Send Message
+      </Button>
+    </ContactForm>
   );
-};
+}
 
 const ContactForm = styled.form`
-  margin: 0 auto;
+  margin: 3vh auto 0;
   max-width: 600px;
   padding: 2rem;
   background: ${({ theme }) => theme.colors.white};
@@ -110,5 +109,3 @@ const EmailInput = styled.input`
 const FormGroup = styled.div`
   margin-bottom: 1.5rem;
 `;
-
-export default Contact;

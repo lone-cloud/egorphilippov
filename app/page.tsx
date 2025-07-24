@@ -1,8 +1,8 @@
+'use client';
+
 import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 import { motion } from 'motion/react';
-
-import Layout from 'components/Layout';
 
 const fadeInUp = keyframes`
   from {
@@ -15,37 +15,52 @@ const fadeInUp = keyframes`
   }
 `;
 
-const Home = () => (
-  <Layout title="Egor Philippov" description="The personal site of Egor Philippov." isHome>
-    <PageBody>
-      <ContentSection>
-        <HelloText>👋 Hello</HelloText>
+const variants = {
+  hidden: { opacity: 0, x: 0, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: 0 },
+};
 
-        <MainText>
-          Is it me you&apos;re looking for? My name is{' '}
-          <HighlightedText>Egor Philippov</HighlightedText> and I&apos;m a passionate{' '}
-          <HighlightedText>Full Stack Software Engineer</HighlightedText>. I am comfortable working
-          on the server, browser or mobile.
-        </MainText>
+export default function Home() {
+  return (
+    <Container>
+      <motion.main
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+        variants={variants}
+        transition={{ duration: 0.3 }}
+      >
+        <PageBody>
+          <ContentSection>
+            <HelloText>👋 Hello</HelloText>
 
-        <MainText>
-          I am always looking for exciting new opportunities <Badge>✔️ remote</Badge>{' '}
-          <Badge>✔️ contract</Badge>
-        </MainText>
+            <MainText>
+              Is it me you&apos;re looking for? My name is{' '}
+              <HighlightedText>Egor Philippov</HighlightedText> and I&apos;m a passionate{' '}
+              <HighlightedText>Full Stack Software Engineer</HighlightedText>. I am comfortable
+              working on the server, browser or mobile.
+            </MainText>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
-          <ContactLink>
-            Feel free to <Link href="/contact">contact me</Link>.
-          </ContactLink>
-        </motion.div>
-      </ContentSection>
-    </PageBody>
-  </Layout>
-);
+            <MainText>
+              I am always looking for exciting new opportunities <Badge>✔️ remote</Badge>{' '}
+              <Badge>✔️ contract</Badge>
+            </MainText>
+
+            <ContactLink>
+              Feel free to <Link href="/contact">contact me</Link>.
+            </ContactLink>
+          </ContentSection>
+        </PageBody>
+      </motion.main>
+    </Container>
+  );
+}
+
+const Container = styled.div`
+  background-size: 100px 199px;
+  padding: 3vh 3vw 0;
+`;
 
 const PageBody = styled.div`
   min-height: 80vh;
@@ -159,5 +174,3 @@ const ContactLink = styled.div`
     }
   }
 `;
-
-export default Home;

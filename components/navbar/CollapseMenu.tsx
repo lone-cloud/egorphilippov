@@ -1,9 +1,11 @@
+'use client';
+
 import { useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { useTransition, animated } from 'react-spring';
 import Link from 'next/link';
 import { darken } from 'polished';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 interface CollapseMenuProps {
   isNavbarOpen: boolean;
@@ -11,8 +13,8 @@ interface CollapseMenuProps {
 }
 
 const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: CollapseMenuProps) => {
-  const { pathname } = useRouter();
-  const ref = useRef(null);
+  const pathname = usePathname();
+  const ref = useRef<HTMLDivElement>(null);
   const closeNavbar = useCallback(() => setIsNavbarOpen(false), [setIsNavbarOpen]);
   const transition = useTransition(isNavbarOpen, {
     from: { position: 'absolute', opacity: 0 },
@@ -25,7 +27,7 @@ const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: CollapseMenuProps) => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         isNavbarOpen &&
-        !ref?.current.contains(event.target) &&
+        !ref.current?.contains(event.target as Node) &&
         !menuToggle?.contains(event.target as Element)
       ) {
         setIsNavbarOpen(false);

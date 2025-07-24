@@ -51,7 +51,7 @@ const StyledFooter = styled.footer`
   padding: ${({ theme }) => theme.spacing.lg};
   background: ${({ theme }) => theme.colors.surface};
   box-shadow: ${({ theme }) => theme.shadows.sm};
-  margin-top: 4rem;
+  margin-top: 2rem;
 `;
 
 const FooterContent = styled.div`

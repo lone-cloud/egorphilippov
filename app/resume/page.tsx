@@ -1,9 +1,9 @@
+'use client';
+
 import styled from 'styled-components';
 
-import Layout from 'components/Layout';
-
-const Clients = () => (
-  <Layout title="Resumé | Egor Philippov" description="The resumé of Egor Philippov.">
+export default function Resume() {
+  return (
     <ResumeContainer data="/EgorPhilippovResume.pdf" width="100%" type="application/pdf">
       <iframe
         title="Resumé PDF"
@@ -11,8 +11,8 @@ const Clients = () => (
         src="https://docs.google.com/viewer?url=https://egor.philippov.ca/EgorPhilippovResume.pdf&embedded=true"
       />
     </ResumeContainer>
-  </Layout>
-);
+  );
+}
 
 const ResumeContainer = styled.object`
   height: 80vh;
@@ -21,5 +21,3 @@ const ResumeContainer = styled.object`
     height: 50vh;
   }
 `;
-
-export default Clients;

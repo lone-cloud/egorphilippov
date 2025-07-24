@@ -1,12 +1,13 @@
+'use client';
+
 import styled from 'styled-components';
 import { motion } from 'motion/react';
 
-import Layout from 'components/Layout';
 import ToTopButton from 'components/ToTopButton';
 import blogPosts from 'components/Posts';
 
-const BlogPage = () => (
-  <Layout title="Blog | Egor Philippov" description="The personal blog of Egor Philippov.">
+export default function BlogPage() {
+  return (
     <BlogContainer>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -30,10 +31,10 @@ const BlogPage = () => (
         </BlogIndex>
 
         <PostsContainer>
-          {blogPosts.map(({ posts }) =>
+          {blogPosts.map(({ year, posts }) =>
             posts.map((Post, i) => (
               <motion.div
-                key={i}
+                key={`${year}-post-${i}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
@@ -47,8 +48,8 @@ const BlogPage = () => (
 
       <ToTopButton />
     </BlogContainer>
-  </Layout>
-);
+  );
+}
 
 const BlogContainer = styled.div`
   max-width: 900px;
@@ -122,5 +123,3 @@ const PostsContainer = styled.div`
     margin-bottom: 3rem;
   }
 `;
-
-export default BlogPage;

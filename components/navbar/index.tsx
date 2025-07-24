@@ -1,7 +1,9 @@
+'use client';
+
 import styled from 'styled-components';
 import Link from 'next/link';
 import { darken } from 'polished';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import BurgerMenu from './BurgerMenu';
 import CollapseMenu from './CollapseMenu';
@@ -12,7 +14,7 @@ interface Props {
 }
 
 export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Readonly<Props>) {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   return (
     <>
@@ -131,10 +133,10 @@ const BurgerWrapper = styled.div`
 `;
 
 const ImgLogo = styled.img`
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
-  margin-top: 0.15rem;
+  margin-top: 0.5rem;
 
   :focus,
   :hover {
