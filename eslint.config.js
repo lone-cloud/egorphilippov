@@ -56,6 +56,7 @@ module.exports = [
       '@typescript-eslint': typescript,
       react: react,
       'react-hooks': reactHooks,
+      '@next/next': require('@next/eslint-plugin-next'),
     },
     rules: {
       // TypeScript rules
@@ -67,6 +68,10 @@ module.exports = [
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
 
+      // Next.js core rules (essential for detection)
+      '@next/next/no-html-link-for-pages': 'error',
+      '@next/next/no-img-element': 'warn',
+
       // Basic rules
       'no-unused-vars': 'off', // Use TypeScript version instead
       'no-console': 'warn',
@@ -75,6 +80,9 @@ module.exports = [
     settings: {
       react: {
         version: 'detect',
+      },
+      next: {
+        rootDir: true,
       },
     },
   },

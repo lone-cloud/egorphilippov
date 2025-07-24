@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import Link from 'next/link';
+import Image from 'next/image';
 import { darken } from 'polished';
 import { usePathname } from 'next/navigation';
 
@@ -22,7 +23,15 @@ export default function Navbar({ isNavbarOpen, setIsNavbarOpen }: Readonly<Props
         <FlexContainer>
           <Link href="/">
             <NavItem aria-label="Site cloud logo">
-              <ImgLogo src="images/logo.jpg" alt="Site cloud logo" />
+              <LogoWrapper>
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Site cloud logo"
+                  width={48}
+                  height={48}
+                  style={{ borderRadius: '50%' }}
+                />
+              </LogoWrapper>
             </NavItem>
           </Link>
 
@@ -132,14 +141,14 @@ const BurgerWrapper = styled.div`
   }
 `;
 
-const ImgLogo = styled.img`
+const LogoWrapper = styled.div`
   width: 3rem;
   height: 3rem;
-  border-radius: 50%;
   margin-top: 0.5rem;
+  transition: transform 0.2s ease;
 
-  :focus,
-  :hover {
+  &:focus,
+  &:hover {
     transform: scale(1.05);
   }
 `;

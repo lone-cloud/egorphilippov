@@ -1,8 +1,9 @@
+import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 
 interface Props {
   isNavbarOpen: boolean;
-  setIsNavbarOpen: (...args: any[]) => void;
+  setIsNavbarOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const BurgerMenu = ({ isNavbarOpen, setIsNavbarOpen }: Props) => (

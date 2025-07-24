@@ -56,9 +56,6 @@ const theme: DefaultTheme = {
     md: '1.5rem',
     lg: '2rem',
     xl: '3rem',
-    small: '0.5rem',
-    medium: '1.5rem',
-    large: '2rem',
     navBarHeight: '4rem',
   },
   borderRadius: {
@@ -71,8 +68,6 @@ const theme: DefaultTheme = {
     sm: '0 1px 3px rgba(0, 0, 0, 0.1)',
     md: '0 4px 6px rgba(0, 0, 0, 0.1)',
     lg: '0 10px 15px rgba(0, 0, 0, 0.1)',
-    small: '0 1px 3px rgba(0, 0, 0, 0.1)',
-    medium: '0 4px 6px rgba(0, 0, 0, 0.1)',
   },
 } as const;
 

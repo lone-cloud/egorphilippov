@@ -4,7 +4,7 @@ import { darken, lighten } from 'polished';
 
 interface Props {
   children?: ReactNode;
-  onClick?: (...args: any[]) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit' | 'reset';
   isLoading?: boolean;
   isDisabled?: boolean;
@@ -16,7 +16,7 @@ const ButtonComponent = (
 ) => (
   <StyledButton
     ref={ref}
-    onClick={(e: MouseEvent) => {
+    onClick={(e: MouseEvent<HTMLButtonElement>) => {
       const isClickable = !isDisabled && !isLoading;
       if (typeof onClick === 'function' && isClickable) {
         onClick(e);

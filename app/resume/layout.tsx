@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: 'Resumé | Egor Philippov',
@@ -9,6 +10,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ResumeLayout({ children }: { children: React.ReactNode }) {
+export default function ResumeLayout({ children }: { children: ReactNode }) {
   return children;
 }

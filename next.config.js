@@ -12,5 +12,6 @@ module.exports = {
     removeConsole: true,
     styledComponents: { fileName: false },
   },
+  images: { unoptimized: true },
   trailingSlash: true,
 };

@@ -19,7 +19,7 @@ const Title = styled.h1`
 
 const TitleContainer = styled.div`
   display: inline-block;
-  margin-bottom: ${({ theme }) => theme.spacing.medium};
+  margin-bottom: ${({ theme }) => theme.spacing.xs};
 `;
 
 export default PageTitle;

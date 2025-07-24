@@ -54,7 +54,7 @@ const ToTopButtonContainer = styled(motion.button)`
   border-radius: 50px;
   padding: 0.75rem 1.25rem;
   cursor: pointer;
-  box-shadow: ${({ theme }) => theme.shadows.medium};
+  box-shadow: ${({ theme }) => theme.shadows.md};
   transition: background-color 200ms ease;
 
   &:hover {

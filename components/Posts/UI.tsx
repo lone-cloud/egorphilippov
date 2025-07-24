@@ -5,7 +5,7 @@ export const Italic = styled.span`
 `;
 
 export const Spacer = styled.div`
-  height: ${({ theme }) => theme.spacing.small};
+  height: ${({ theme }) => theme.spacing.sm};
 `;
 
 export const EntryBody = styled.div`
@@ -49,7 +49,7 @@ export const SubTitle = styled.h3`
 `;
 
 export const EntryDate = styled.p`
-  margin-top: ${({ theme }) => theme.spacing.small};
+  margin-top: ${({ theme }) => theme.spacing.sm};
   font-size: ${({ theme }) => theme.typography.fontSize.sm};
   color: ${({ theme }) => theme.colors.grey};
 `;
@@ -60,18 +60,18 @@ export const BlogEntry = styled.div`
   margin: 2rem 0;
   border-radius: 8px;
   background: ${({ theme }) => theme.colors.white};
-  box-shadow: ${({ theme }) => theme.shadows.small};
+  box-shadow: ${({ theme }) => theme.shadows.sm};
   transition:
     transform 200ms ease,
     box-shadow 200ms ease;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: ${({ theme }) => theme.shadows.medium};
+    box-shadow: ${({ theme }) => theme.shadows.md};
   }
 
   &::after {
-    margin: ${({ theme }) => theme.spacing.large} 0;
+    margin: ${({ theme }) => theme.spacing.lg} 0;
     width: 100%;
     content: '';
     display: block;

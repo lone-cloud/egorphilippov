@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 
 import ToTopButton from 'components/ToTopButton';
 import blogPosts from 'components/Posts';
+import PageTitle from 'components/PageTitle';
 
 export default function BlogPage() {
   return (
@@ -14,7 +15,7 @@ export default function BlogPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <PageTitle>Latest Posts</PageTitle>
+        <PageTitle title="Latest posts" />
         <BlogIndex>
           {blogPosts.map(({ year, metas }) => (
             <BlogIndexYear key={year}>
@@ -52,7 +53,7 @@ export default function BlogPage() {
 }
 
 const BlogContainer = styled.div`
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
   position: relative;
@@ -62,20 +63,12 @@ const BlogContainer = styled.div`
   }
 `;
 
-const PageTitle = styled.h1`
-  font-size: ${({ theme }) => theme.typography.fontSize['4xl']};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  line-height: ${({ theme }) => theme.typography.lineHeight.tight};
-  color: ${({ theme }) => theme.colors.black};
-  margin-bottom: 2rem;
-`;
-
 const BlogIndex = styled.div`
   background: ${({ theme }) => theme.colors.white};
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 3rem;
-  box-shadow: ${({ theme }) => theme.shadows.small};
+  box-shadow: ${({ theme }) => theme.shadows.sm};
 `;
 
 const BlogIndexYear = styled.div`

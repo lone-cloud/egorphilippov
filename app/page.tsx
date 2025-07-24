@@ -59,7 +59,6 @@ export default function Home() {
 
 const Container = styled.div`
   background-size: 100px 199px;
-  padding: 3vh 3vw 0;
 `;
 
 const PageBody = styled.div`

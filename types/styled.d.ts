@@ -54,9 +54,6 @@ declare module 'styled-components' {
       md: string;
       lg: string;
       xl: string;
-      small: string;
-      medium: string;
-      large: string;
       navBarHeight: string;
     };
     borderRadius: {
@@ -69,8 +66,6 @@ declare module 'styled-components' {
       sm: string;
       md: string;
       lg: string;
-      small: string;
-      medium: string;
     };
   }
 }

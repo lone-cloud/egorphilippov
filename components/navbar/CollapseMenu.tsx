@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 import { useTransition, animated } from 'react-spring';
 import Link from 'next/link';
@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 
 interface CollapseMenuProps {
   isNavbarOpen: boolean;
-  setIsNavbarOpen: (...args: any[]) => void;
+  setIsNavbarOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const CollapseMenu = ({ isNavbarOpen, setIsNavbarOpen }: CollapseMenuProps) => {
