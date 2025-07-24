@@ -61,20 +61,9 @@ export const BlogEntry = styled.div`
   border-radius: 8px;
   background: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.shadows.sm};
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease;
+  transition: box-shadow 200ms ease;
 
   &:hover {
-    transform: translateY(-2px);
     box-shadow: ${({ theme }) => theme.shadows.md};
-  }
-
-  &::after {
-    margin: ${({ theme }) => theme.spacing.lg} 0;
-    width: 100%;
-    content: '';
-    display: block;
-    border-bottom: 2px solid ${({ theme }) => theme.colors.greyLight};
   }
 `;

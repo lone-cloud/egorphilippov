@@ -22,9 +22,9 @@ export default function BlogPage() {
               <YearTitle>{year}</YearTitle>
               <PostsList>
                 {metas.map(({ id, title }) => (
-                  <PostItem key={id}>
+                  <li key={id}>
                     <BlogEntryLink href={`#${id}`}>{title}</BlogEntryLink>
-                  </PostItem>
+                  </li>
                 ))}
               </PostsList>
             </BlogIndexYear>
@@ -33,16 +33,7 @@ export default function BlogPage() {
 
         <PostsContainer>
           {blogPosts.map(({ year, posts }) =>
-            posts.map((Post, i) => (
-              <motion.div
-                key={`${year}-post-${i}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Post />
-              </motion.div>
-            )),
+            posts.map((Post, i) => <Post key={`${year}-post-${i}`} />),
           )}
         </PostsContainer>
       </motion.div>
@@ -88,10 +79,6 @@ const YearTitle = styled.h2`
 const PostsList = styled.ul`
   list-style: none;
   padding: 0;
-`;
-
-const PostItem = styled.li`
-  margin-bottom: 0.75rem;
 `;
 
 const BlogEntryLink = styled.a`
