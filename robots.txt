@@ -1,3 +1,6 @@
-# http://www.robotstxt.org
-User-agent: *
-Disallow:
+User-Agent: *
+Allow: /
+Disallow: /private/
+Disallow: /_next/
+
+Sitemap: https://egor.philippov.ca/sitemap.xml
