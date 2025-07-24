@@ -3,9 +3,9 @@
 import styled from 'styled-components';
 import { motion } from 'motion/react';
 
-import ToTopButton from 'components/ToTopButton';
-import blogPosts from 'components/Posts';
-import PageTitle from 'components/PageTitle';
+import ToTopButton from '@/components/ToTopButton';
+import blogPosts from '@/components/Posts';
+import PageTitle from '@/components/PageTitle';
 
 export default function BlogPage() {
   return (

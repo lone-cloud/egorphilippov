@@ -5,8 +5,8 @@ import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 import { motion } from 'motion/react';
 
-import PageTitle from 'components/PageTitle';
-import Button from 'components/Button';
+import PageTitle from '@/components/PageTitle';
+import Button from '@/components/Button';
 
 export default function Contact() {
   const [email, setEmail] = useState('');

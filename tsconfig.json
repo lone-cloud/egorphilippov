@@ -20,8 +20,22 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "styles/*": [
+        "./src/styles/*"
+      ],
+      "components/*": [
+        "./src/components/*"
+      ],
+      "types/*": [
+        "./src/types/*"
+      ]
+    },
     "typeRoots": [
-      "types/",
+      "src/types/",
       "node_modules/@types"
     ],
     "incremental": true,
@@ -36,8 +50,10 @@
     "node_modules"
   ],
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "pages/**/*.ts",
+    "pages/**/*.tsx",
     ".next/types/**/*.ts"
   ]
 }

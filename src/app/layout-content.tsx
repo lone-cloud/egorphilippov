@@ -5,10 +5,10 @@ import styled, { ThemeProvider, DefaultTheme } from 'styled-components';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import type { ReactNode } from 'react';
 
-import GlobalStyles from 'styles/GlobalStyles';
-import stylesTheme from 'styles/theme';
-import Navbar from 'components/Navbar';
-import Footer from 'components/Footer';
+import GlobalStyles from '@/styles/GlobalStyles';
+import stylesTheme from '@/styles/theme';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 config.autoAddCss = false;
 
