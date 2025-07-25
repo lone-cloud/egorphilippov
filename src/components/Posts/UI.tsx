@@ -11,7 +11,7 @@ export const Italic = ({ children }: ComponentProps) => <span className="italic"
 export const Spacer = () => <div className="h-4" />;
 
 export const EntryBody = ({ children }: ComponentProps) => (
-  <div className="pt-20 -mt-20 leading-relaxed text-lg prose prose-lg max-w-none">{children}</div>
+  <div className="pt-20 -mt-20 blog-content max-w-none">{children}</div>
 );
 
 export const EntryTitle = ({ children }: ComponentProps) => (
