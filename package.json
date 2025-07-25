@@ -11,7 +11,7 @@
     "dev": "next --turbopack",
     "lint": "eslint .",
     "prepare": "husky",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "pretty": "prettier --write \"**/*.{js,jsx,ts,tsx,md,yml,css,json}\""
   },
   "dependencies": {
