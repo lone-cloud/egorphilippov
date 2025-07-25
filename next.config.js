@@ -11,14 +11,6 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
     esmExternals: true,
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
   },
   compiler: {
     reactRemoveProperties: true,

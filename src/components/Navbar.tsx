@@ -10,8 +10,8 @@ export default function Navbar() {
 
   return (
     <nav className="fixed w-full top-0 left-0 z-10 bg-white shadow-sm">
-      <div className="max-w-screen-2xl flex mx-auto justify-between px-6 h-16 bg-transparent sm:px-4">
-        <Link href="/" className="flex px-6 sm:px-0">
+      <div className="max-w-screen-2xl flex mx-auto justify-between sm:px-6 h-16 bg-transparent px-4">
+        <Link href="/">
           <div
             className="w-12 h-12 mt-2 transition-transform duration-200 hover:scale-105 focus:scale-105"
             aria-label="Site cloud logo"
