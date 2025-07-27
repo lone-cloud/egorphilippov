@@ -5,7 +5,6 @@ import { IoChevronDown } from 'react-icons/io5';
 
 import ToTopButton from '@/components/ToTopButton';
 import blogPosts from '@/components/Posts';
-import PageTitle from '@/components/PageTitle';
 
 export default function BlogPage() {
   const currentYear = new Date().getFullYear();
@@ -26,12 +25,8 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-8 relative sm:p-4">
-      <div className="animate-fade-in-down">
-        <PageTitle title="Latest posts" />
-      </div>
-
-      <div className="bg-white rounded-xl p-8 mb-12 shadow-sm animate-fade-in-down-delay-1 opacity-0">
+    <>
+      <div className="bg-white rounded-xl p-8 mb-12 shadow-sm">
         {blogPosts.map(({ year, metas }) => (
           <div key={year} className="[&:not(:last-child)]:mb-8">
             <button
@@ -63,13 +58,13 @@ export default function BlogPage() {
         ))}
       </div>
 
-      <div className="[&>div]:mb-12 animate-fade-in-down-delay-2 opacity-0">
+      <div className="[&>div]:mb-12">
         {blogPosts.map(({ year, posts }) =>
           posts.map((Post, i) => <Post key={`${year}-post-${i}`} />),
         )}
       </div>
 
       <ToTopButton />
-    </div>
+    </>
   );
 }

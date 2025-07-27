@@ -11,5 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function ResumeLayout({ children }: { children: ReactNode }) {
-  return children;
+  return (
+    <div className="max-w-4xl mx-auto p-8 relative sm:p-4 animate-fade-in-down">{children}</div>
+  );
 }
