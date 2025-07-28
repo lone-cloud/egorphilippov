@@ -51,8 +51,6 @@ module.exports = {
       },
       animation: {
         'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
-        'fade-in-down-delay-1': 'fadeInDown 0.6s ease-out 0.1s forwards',
-        'fade-in-down-delay-2': 'fadeInDown 0.6s ease-out 0.2s forwards',
         'scale-in': 'scaleIn 0.2s ease-out forwards',
         'scale-out': 'scaleOut 0.2s ease-in forwards',
       },

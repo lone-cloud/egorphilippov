@@ -25,7 +25,7 @@ export const SubTitle = ({ children }: ComponentProps) => (
 );
 
 export const EntryDate = ({ children }: ComponentProps) => (
-  <p className="mt-4 text-sm text-gray-500">{children}</p>
+  <p className="mt-4 mb-2 text-sm text-gray-500">{children}</p>
 );
 
 export const BlogEntry = ({ children, id }: BlogEntryProps) => (

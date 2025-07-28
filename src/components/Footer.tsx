@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 const year = new Date().getFullYear();
 
 const Footer = () => (
-  <footer className="p-8 bg-white shadow-sm mt-8">
+  <footer className="p-8 bg-white shadow-sm">
     <div className="max-w-6xl mx-auto flex flex-col items-center gap-8">
       <div className="flex flex-col items-center gap-4">
         <span className="uppercase font-semibold text-sm tracking-wide text-gray-500">

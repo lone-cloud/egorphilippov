@@ -26,7 +26,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <div className="bg-white rounded-xl p-8 mb-12 shadow-sm">
+      <div className="bg-white rounded-xl p-8 mb-8 shadow-sm">
         {blogPosts.map(({ year, metas }) => (
           <div key={year} className="[&:not(:last-child)]:mb-8">
             <button
@@ -58,7 +58,7 @@ export default function BlogPage() {
         ))}
       </div>
 
-      <div className="[&>div]:mb-12">
+      <div className="[&>div]:mb-8">
         {blogPosts.map(({ year, posts }) =>
           posts.map((Post, i) => <Post key={`${year}-post-${i}`} />),
         )}
