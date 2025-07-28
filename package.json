@@ -4,7 +4,7 @@
   "sideEffects": false,
   "license": "UNLICENSED",
   "scripts": {
-    "analyze": "ANALYZE=true pnpm build",
+    "analyze": "cross-env ANALYZE=true pnpm build",
     "build": "next build",
     "compile": "tsc --noEmit",
     "deploy": "pnpm build && gh-pages -d out",
@@ -29,6 +29,7 @@
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.38.0",
     "autoprefixer": "^10.4.21",
+    "cross-env": "^10.0.0",
     "eslint": "^9.32.0",
     "eslint-config-next": "^15.4.4",
     "eslint-config-prettier": "^10.1.8",
