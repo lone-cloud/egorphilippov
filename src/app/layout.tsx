@@ -53,9 +53,7 @@ export default function RootLayout({
         <div className="grid grid-rows-[1fr_min-content] min-h-screen bg-gray-50">
           <Navbar />
 
-          <main className="mt-16 max-w-4xl mx-auto p-2 relative md:p-8 w-full animate-fade-in-down">
-            {children}
-          </main>
+          <main className="mt-16 max-w-4xl mx-auto p-2 relative md:p-8 w-full">{children}</main>
 
           <Footer />
         </div>

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="max-w-4xl p-8 rounded-2xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+    <div className="max-w-4xl p-8 rounded-2xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.06)] animate-fade-in-down">
       <div className="uppercase font-bold text-lg tracking-[2px] text-gray-500 mb-8 inline-block py-2 px-4 bg-gray-200/25 rounded-lg">
         👋 Hello
       </div>

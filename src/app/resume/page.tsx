@@ -6,7 +6,7 @@ export default function Resume() {
       data="/EgorPhilippovResume.pdf"
       width="100%"
       type="application/pdf"
-      className="lg:h-[80vh] h-[60vh] min-h-20"
+      className="lg:h-[80vh] h-[60vh] min-h-20 animate-fade-in-down"
     >
       <iframe
         title="Resumé PDF"

@@ -13,7 +13,7 @@ export default function Contact() {
     <form
       action="https://formspree.io/f/xeqdjarz"
       method="POST"
-      className="mx-auto rounded-xl p-8 bg-white shadow-sm"
+      className="mx-auto rounded-xl p-8 bg-white shadow-sm animate-fade-in-down"
     >
       <div className="mb-6">
         <label htmlFor="email" className="block mb-2 font-medium text-gray-900">
