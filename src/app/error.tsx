@@ -2,13 +2,14 @@
 
 import { useEffect } from 'react';
 
-export default function Error({
-  error,
-  reset,
-}: {
+import { Button } from '@/components/Button';
+
+type Props = {
   error: Error & { digest?: string };
   reset: () => void;
-}) {
+};
+
+export default function Error({ error, reset }: Props) {
   useEffect(() => {
     // Log error to monitoring service
     if (process.env.NODE_ENV === 'development') {
@@ -28,18 +29,8 @@ export default function Error({
           We apologize for the inconvenience. Please try again or refresh the page.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <button
-            onClick={reset}
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-          >
-            Try Again
-          </button>
-          <button
-            onClick={() => window.location.reload()}
-            className="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors"
-          >
-            Refresh Page
-          </button>
+          <Button onClick={reset}>Try Again</Button>
+          <Button onClick={() => window.location.reload()}>Refresh Page</Button>
         </div>
         {process.env.NODE_ENV === 'development' && error && (
           <details className="mt-6 text-left">

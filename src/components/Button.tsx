@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode, Ref, MouseEvent } from 'react';
+import { ReactNode, MouseEvent } from 'react';
 import { cn } from '@/lib/utils';
 
 interface Props {
@@ -11,12 +11,16 @@ interface Props {
   className?: string;
 }
 
-const ButtonComponent = (
-  { children, onClick, isDisabled, isLoading, variant = 'primary', className, ...props }: Props,
-  ref: Ref<HTMLButtonElement>,
-) => (
+export const Button = ({
+  children,
+  onClick,
+  isDisabled,
+  isLoading,
+  variant = 'primary',
+  className,
+  ...props
+}: Props) => (
   <button
-    ref={ref}
     onClick={(e: MouseEvent<HTMLButtonElement>) => {
       const isClickable = !isDisabled && !isLoading;
       if (typeof onClick === 'function' && isClickable) {
@@ -45,7 +49,3 @@ const ButtonComponent = (
     {children}
   </button>
 );
-
-const Button = forwardRef(ButtonComponent);
-
-export default Button;

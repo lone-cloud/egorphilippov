@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import Button from '@/components/Button';
+import { Button } from '@/components/Button';
 
 export default function Contact() {
   const [email, setEmail] = useState('');
