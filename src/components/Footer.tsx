@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const year = new Date().getFullYear();
 
-const Footer = () => (
+export const Footer = () => (
   <footer className="p-8 bg-white shadow-sm">
     <div className="max-w-6xl mx-auto flex flex-col items-center gap-8">
       <div className="flex flex-col items-center gap-4">
@@ -52,5 +52,3 @@ const Footer = () => (
     </div>
   </footer>
 );
-
-export default Footer;

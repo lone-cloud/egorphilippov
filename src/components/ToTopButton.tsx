@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IoArrowUp } from 'react-icons/io5';
 
-function ToTopButton() {
+export function ToTopButton() {
   const [isArrowVisible, setIsArrowVisible] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
 
@@ -50,5 +50,3 @@ function ToTopButton() {
     </>
   );
 }
-
-export default ToTopButton;

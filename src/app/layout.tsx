@@ -3,10 +3,9 @@ import type { Metadata, Viewport } from 'next';
 
 import '@/styles/globals.css';
 
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 
-// This metadata will be used as the default for all pages
 export const metadata: Metadata = {
   title: 'Egor Philippov',
   description: 'The personal site of Egor Philippov.',

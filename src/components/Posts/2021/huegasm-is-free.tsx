@@ -1,4 +1,4 @@
-import { BlogEntry, EntryTitle, EntryDate, EntryBody, Spacer } from '../UI';
+import { Entry, EntryTitle, EntryDate, EntryBody, Spacer } from '../UI';
 
 export const meta = {
   id: 'huegasm-is-free',
@@ -7,7 +7,7 @@ export const meta = {
 };
 
 const Post = () => (
-  <BlogEntry id={meta.id}>
+  <Entry id={meta.id}>
     <EntryTitle>{meta.title}</EntryTitle>
     <EntryDate>{meta.date}</EntryDate>
     <EntryBody>
@@ -52,7 +52,7 @@ const Post = () => (
       tail&quot; web sites. I must minimize the time spent working on platforms (ex. iOS, Android,
       Hue) which tend to end up restricting, monetizing and controlling me.
     </EntryBody>
-  </BlogEntry>
+  </Entry>
 );
 
 export default Post;

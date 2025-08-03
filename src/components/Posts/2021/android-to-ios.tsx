@@ -1,4 +1,4 @@
-import { BlogEntry, EntryTitle, EntryDate, EntryBody, Spacer } from '../UI';
+import { Entry, EntryTitle, EntryDate, EntryBody, Spacer } from '../UI';
 
 export const meta = {
   id: 'android-to-ios',
@@ -7,7 +7,7 @@ export const meta = {
 };
 
 const Post = () => (
-  <BlogEntry id={meta.id}>
+  <Entry id={meta.id}>
     <EntryTitle>{meta.title}</EntryTitle>
     <EntryDate>{meta.date}</EntryDate>
     <EntryBody>
@@ -71,7 +71,7 @@ const Post = () => (
       the passcode and it&apos;s starting to feel better now. I&apos;ve decided I&apos;ll be be
       sticking with my new iPhone mini for the foreseeable future.
     </EntryBody>
-  </BlogEntry>
+  </Entry>
 );
 
 export default Post;

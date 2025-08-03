@@ -1,4 +1,4 @@
-import { BlogEntry, EntryTitle, EntryDate, EntryBody, Spacer } from '../UI';
+import { Entry, EntryTitle, EntryDate, EntryBody, Spacer } from '../UI';
 
 export const meta = {
   id: 'the-rise-of-the-long-tailed-beast',
@@ -7,7 +7,7 @@ export const meta = {
 };
 
 const Post = () => (
-  <BlogEntry id={meta.id}>
+  <Entry id={meta.id}>
     <EntryTitle>{meta.title}</EntryTitle>
     <EntryDate>{meta.date}</EntryDate>
     <EntryBody>
@@ -34,7 +34,7 @@ const Post = () => (
       freely) create and deploy sophisticated web applications. In my next blog post I&apos;ll
       detail exactly how I did it.
     </EntryBody>
-  </BlogEntry>
+  </Entry>
 );
 
 export default Post;

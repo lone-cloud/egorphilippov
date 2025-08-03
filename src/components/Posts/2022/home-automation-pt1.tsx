@@ -1,4 +1,4 @@
-import { BlogEntry, EntryTitle, EntryDate, EntryBody } from '../UI';
+import { Entry, EntryTitle, EntryDate, EntryBody } from '../UI';
 
 export const meta = {
   id: 'home-automation-pt1',
@@ -7,7 +7,7 @@ export const meta = {
 };
 
 const Post = () => (
-  <BlogEntry id={meta.id}>
+  <Entry id={meta.id}>
     <EntryTitle>{meta.title}</EntryTitle>
     <EntryDate>{meta.date}</EntryDate>
     <EntryBody>
@@ -48,7 +48,7 @@ const Post = () => (
       and to automate the positioning of my window blinds. More about my dive into home automation
       in part 2!
     </EntryBody>
-  </BlogEntry>
+  </Entry>
 );
 
 export default Post;

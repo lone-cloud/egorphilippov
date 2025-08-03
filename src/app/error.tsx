@@ -11,7 +11,6 @@ type Props = {
 
 export default function Error({ error, reset }: Props) {
   useEffect(() => {
-    // Log error to monitoring service
     if (process.env.NODE_ENV === 'development') {
       // eslint-disable-next-line no-console
       console.error('Error caught by Next.js error boundary:', error);

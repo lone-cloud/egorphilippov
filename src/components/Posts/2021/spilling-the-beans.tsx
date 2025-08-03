@@ -1,4 +1,4 @@
-import { BlogEntry, EntryTitle, EntryDate, EntryBody, Spacer, SubTitle, Italic } from '../UI';
+import { Entry, EntryTitle, EntryDate, EntryBody, Spacer, SubTitle, Italic } from '../UI';
 
 export const meta = {
   id: 'spilling-the-beans',
@@ -7,7 +7,7 @@ export const meta = {
 };
 
 const Post = () => (
-  <BlogEntry id={meta.id}>
+  <Entry id={meta.id}>
     <EntryTitle>{meta.title}</EntryTitle>
     <EntryDate>{meta.date}</EntryDate>
     <EntryBody>
@@ -213,7 +213,7 @@ const Post = () => (
         </li>
       </ol>
     </EntryBody>
-  </BlogEntry>
+  </Entry>
 );
 
 export default Post;

@@ -1,9 +1,15 @@
+import { ReactNode } from 'react';
+
 interface ComponentProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-interface BlogEntryProps extends ComponentProps {
+interface EntryProps extends ComponentProps {
   id?: string;
+}
+
+interface FigureProps extends ComponentProps {
+  caption?: string;
 }
 
 export const Italic = ({ children }: ComponentProps) => <span className="italic">{children}</span>;
@@ -28,11 +34,24 @@ export const EntryDate = ({ children }: ComponentProps) => (
   <p className="mt-4 mb-2 text-sm text-gray-500">{children}</p>
 );
 
-export const BlogEntry = ({ children, id }: BlogEntryProps) => (
+export const Entry = ({ children, id }: EntryProps) => (
   <div
     id={id}
     className="scroll-mt-20 p-8 my-8 rounded-lg bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
   >
     {children}
   </div>
+);
+
+export const Figure = ({ children, caption }: FigureProps) => (
+  <figure className="my-8 flex flex-col items-center">
+    <div className="bg-amber-50 p-6 rounded-xl shadow-lg border border-amber-100">
+      <div className="overflow-hidden rounded-lg border border-gray-200 bg-white">{children}</div>
+      {caption && (
+        <figcaption className="mt-4 text-sm text-gray-700 text-center leading-relaxed">
+          {caption}
+        </figcaption>
+      )}
+    </div>
+  </figure>
 );

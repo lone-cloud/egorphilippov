@@ -1,4 +1,4 @@
-import { BlogEntry, EntryTitle, EntryDate, EntryBody, Spacer } from '../UI';
+import { Entry, EntryTitle, EntryDate, EntryBody, Spacer } from '../UI';
 
 export const meta = {
   id: 'de-google',
@@ -7,7 +7,7 @@ export const meta = {
 };
 
 const Post = () => (
-  <BlogEntry id={meta.id}>
+  <Entry id={meta.id}>
     <EntryTitle>{meta.title}</EntryTitle>
     <EntryDate>{meta.date}</EntryDate>
     <EntryBody>
@@ -62,7 +62,7 @@ const Post = () => (
       allowing mega-corporation and the state knowing and recording all aspects of their lives. And
       always remember, if a service is free then you are the product!
     </EntryBody>
-  </BlogEntry>
+  </Entry>
 );
 
 export default Post;
