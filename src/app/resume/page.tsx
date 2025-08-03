@@ -13,11 +13,11 @@ export default function Resume() {
         width="100%"
         src="https://docs.google.com/viewer?url=https://egor.philippov.ca/EgorPhilippovResume.pdf&embedded=true"
       >
-        <p className="text-center py-8">
+        <p className="text-center py-8 text-gray-900 dark:text-gray-100">
           Unable to display PDF.
           <a
             href="/EgorPhilippovResume.pdf"
-            className="text-blue-600 hover:text-blue-700 underline ml-1"
+            className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline ml-1"
             download
           >
             Download Resume
