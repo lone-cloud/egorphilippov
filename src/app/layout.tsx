@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: 'https://egor.philippov.ca/images/logo-xl.jpg',
+        url: 'https://egor.philippov.ca/images/logo-xl.webp',
         width: 496,
         height: 496,
       },

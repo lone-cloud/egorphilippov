@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { Entry, EntryTitle, EntryDate, EntryBody, Spacer, Figure } from '../UI';
+import { getBlurDataUrl } from '@/lib/blurDataUrls';
 
 export const meta = {
   id: 'age-of-llamas',
@@ -14,7 +15,15 @@ const Post = () => (
     <EntryDate>{meta.date}</EntryDate>
     <EntryBody>
       <Figure caption="A cool llama generated locally with FLUX.1-Kontext-dev">
-        <Image src="/images/llama.jpg" alt="A very cool llama" width={400} height={551} />
+        <Image
+          src="/images/llama.webp"
+          alt="A very cool llama"
+          width={400}
+          height={551}
+          quality={85}
+          placeholder="blur"
+          blurDataURL={getBlurDataUrl('NEUTRAL')}
+        />
       </Figure>
       The year is 2015, and the top summer blockbuster is a sci-fi film featuring a man-made AI
       named Ultron that tries to take over the world and kill all humans. Fast forward to 2025, and

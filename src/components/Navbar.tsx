@@ -32,7 +32,7 @@ export function Navbar() {
               aria-label="Site cloud logo"
             >
               <Image
-                src="/images/logo.jpg"
+                src="/images/logo.webp"
                 alt="Site cloud logo"
                 width={48}
                 height={48}
