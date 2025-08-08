@@ -1,5 +1,6 @@
 import ageOfLlms, { meta as ageOfLlmsMeta } from './age-of-llms';
+import iUseArchBtw, { meta as iUseArchBtwMeta } from './i-use-arch-btw';
 
-export const metas = [ageOfLlmsMeta];
+export const metas = [iUseArchBtwMeta, ageOfLlmsMeta];
 
-export const posts = [ageOfLlms];
+export const posts = [iUseArchBtw, ageOfLlms];

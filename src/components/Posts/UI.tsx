@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { Card } from '@/components/Card';
+
 interface ComponentProps {
   children: ReactNode;
 }
@@ -37,12 +39,9 @@ export const EntryDate = ({ children }: ComponentProps) => (
 );
 
 export const Entry = ({ children, id }: EntryProps) => (
-  <div
-    id={id}
-    className="scroll-mt-20 p-8 my-8 rounded-lg bg-white dark:bg-gray-800 shadow-sm transition-shadow duration-200 hover:shadow-md border border-gray-200 dark:border-gray-700"
-  >
-    {children}
-  </div>
+  <Card className="scroll-mt-20 my-8 transition-shadow duration-200 hover:shadow-md">
+    <div id={id}>{children}</div>
+  </Card>
 );
 
 export const Figure = ({ children, caption }: FigureProps) => (
