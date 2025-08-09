@@ -9,11 +9,11 @@ import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Egor Philippov - Full Stack Software Engineer',
+    default: 'Egor Philippov',
     template: '%s | Egor Philippov',
   },
   description:
-    'Full Stack Software Engineer specializing in React, Next.js, Ember.js, React Native, and cloud technologies. Available for remote work, contract, and full-time opportunities.',
+    'Full Stack Software Engineer specializing in React, Next.js, Ember.js, and cloud technologies. Available for remote work, contract, and full-time opportunities.',
   keywords: [
     'Egor Philippov',
     'Full Stack Developer',
@@ -21,12 +21,10 @@ export const metadata: Metadata = {
     'React',
     'Next.js',
     'Ember.js',
-    'React Native',
     'Node.js',
     'TypeScript',
     'JavaScript',
     'Web Development',
-    'Mobile Development',
     'Remote Developer',
     'Contract Developer',
   ],
@@ -59,9 +57,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://egor.philippov.ca',
     siteName: 'Egor Philippov',
-    title: 'Egor Philippov - Full Stack Software Engineer',
+    title: 'Egor Philippov',
     description:
-      'Full Stack Software Engineer specializing in React, Next.js, Ember.js, React Native, and cloud technologies. Available for remote work, contract, and full-time opportunities.',
+      'Full Stack Software Engineer specializing in React, Next.js, Ember.js and cloud technologies. Available for remote work, contract, and full-time opportunities.',
     images: [
       {
         url: 'https://egor.philippov.ca/images/logo-xl.webp',
@@ -73,9 +71,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Egor Philippov - Full Stack Software Engineer',
+    title: 'Egor Philippov',
     description:
-      'Full Stack Software Engineer specializing in React, Next.js, Ember.js, React Native, and cloud technologies.',
+      'Full Stack Software Engineer specializing in React, Next.js, Ember.js and cloud technologies.',
     images: ['https://egor.philippov.ca/images/logo-xl.webp'],
   },
   robots: {
@@ -132,12 +130,11 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Egor Philippov',
-              jobTitle: 'Full Stack Software Engineer',
               url: 'https://egor.philippov.ca',
               sameAs: ['https://github.com/lone-cloud'],
               worksFor: {
                 '@type': 'Organization',
-                name: 'Freelance',
+                name: 'Nidratech Ltd.',
               },
               knowsAbout: [
                 'JavaScript',
@@ -146,14 +143,12 @@ export default function RootLayout({
                 'Next.js',
                 'Node.js',
                 'Ember.js',
-                'React Native',
                 'Full Stack Development',
                 'Web Development',
-                'Mobile Development',
                 'Software Engineering',
               ],
               description:
-                'Full Stack Software Engineer specializing in React, Next.js, Ember.js, React Native, and cloud technologies. Available for remote work, contract, and full-time opportunities.',
+                'Full Stack Software Engineer specializing in React, Next.js, Ember.js and cloud technologies. Available for remote work, contract, and full-time opportunities.',
             }),
           }}
         />

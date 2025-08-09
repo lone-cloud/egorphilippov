@@ -52,7 +52,6 @@ module.exports = {
       },
       animation: {
         'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
-        'scale-in': 'scaleIn 0.2s ease-out forwards',
         'scale-out': 'scaleOut 0.2s ease-in forwards',
       },
       keyframes: {

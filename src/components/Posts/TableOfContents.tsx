@@ -45,7 +45,6 @@ export function TableOfContents({ handlePostNavigation }: TableOfContentsProps) 
               {metas.map(({ id, title }) => (
                 <li key={id} className="flex items-center justify-between py-2 group">
                   <a
-                    href={`#${id}`}
                     onClick={(e) => handlePostNavigation(e, id)}
                     className="flex-grow text-gray-900 dark:text-gray-100 text-lg font-medium leading-normal no-underline transition-all duration-200 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer py-1 pl-3 -ml-3 border-l-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400"
                   >

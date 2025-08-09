@@ -186,22 +186,9 @@ export default function Home() {
           <HighlightedWord>Node.js</HighlightedWord> and <HighlightedWord>Next.js</HighlightedWord>.
         </div>
 
-        <div className="text-xl leading-relaxed mb-4 text-gray-900 dark:text-gray-100 sm:leading-normal">
-          I am always looking for exciting new opportunities{' '}
-          <span className="gap-3 inline-flex flex-wrap">
-            {['remote', 'contract', 'full-time'].map((type) => (
-              <span
-                key={type}
-                className="inline-flex items-center bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 py-2 px-4 rounded-full text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-600/20 dark:hover:bg-blue-400/20"
-              >
-                ✔️ {type}
-              </span>
-            ))}
-          </span>
-        </div>
-
         <div className="text-xl mb-4 text-gray-900 dark:text-gray-100">
-          Feel free to <StyledLink href="/contact">contact me</StyledLink> or check out my{' '}
+          I am always looking for exciting new opportunities. Feel free to{' '}
+          <StyledLink href="/contact">contact me</StyledLink> or check out my{' '}
           <StyledLink href="/resume">resume</StyledLink>.
         </div>
       </Card>

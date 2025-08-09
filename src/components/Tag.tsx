@@ -14,6 +14,10 @@ export const Tag = ({ children, color }: TagProps) => {
   };
 
   return (
-    <span className={`px-3 py-1 ${colorClasses[color]} text-sm rounded-full`}>{children}</span>
+    <span
+      className={`px-3 py-1 ${colorClasses[color]} text-sm rounded-full hover:-translate-y-1 transition-all duration-200`}
+    >
+      {children}
+    </span>
   );
 };

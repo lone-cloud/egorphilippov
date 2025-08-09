@@ -39,7 +39,7 @@ export function ToTopButton() {
         <button
           onClick={scrollToTop}
           className={`fixed bottom-8 right-8 bg-blue-600 dark:bg-blue-600 text-white border-none rounded-full p-3 cursor-pointer shadow-md transition-all duration-200 hover:bg-gray-900 dark:hover:bg-gray-700 hover:scale-110 active:scale-90 sm:bottom-6 sm:right-6 ${
-            isAnimatingOut ? 'animate-scale-out' : 'animate-scale-in opacity-0'
+            isAnimatingOut ? 'animate-scale-out' : ''
           }`}
         >
           <div className="flex items-center gap-2">

@@ -48,18 +48,26 @@ export function useBlogPosts() {
   const handlePostNavigation = useCallback(
     (e: MouseEvent, postId: string) => {
       const postIndex = postIdToIndex.get(postId);
+      const goToPost = () => {
+        const element = document.getElementById(postId);
+
+        if (element) {
+          const elementTop = element.offsetTop;
+          window.scrollTo({
+            top: elementTop - 40,
+            behavior: 'smooth',
+          });
+        }
+      };
 
       if (postIndex !== undefined && postIndex >= visiblePostsCount) {
         e.preventDefault();
         const requiredCount = Math.ceil((postIndex + 1) / POSTS_PER_PAGE) * POSTS_PER_PAGE;
         setVisiblePostsCount(Math.min(requiredCount, allPosts.length));
 
-        window.setTimeout(() => {
-          const element = document.getElementById(postId);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
+        window.setTimeout(goToPost, 100);
+      } else {
+        goToPost();
       }
     },
     [postIdToIndex, visiblePostsCount, allPosts.length],
