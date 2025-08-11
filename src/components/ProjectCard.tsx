@@ -29,21 +29,23 @@ export const ProjectCard = ({
   onToggle,
 }: ProjectCardProps) => (
   <div className="border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden">
-    <div className="flex items-start space-x-4 p-6">
+    <div className="flex items-start space-x-2 sm:space-x-4 p-4 sm:p-6">
       <div
-        className={`flex-shrink-0 w-12 h-12 ${iconBgColor} rounded-lg flex items-center justify-center`}
+        className={`flex-shrink-0 w-8 h-8 sm:w-12 sm:h-12 ${iconBgColor} rounded-lg flex items-center justify-center`}
       >
-        <span className="text-2xl">{icon}</span>
+        <span className="text-lg sm:text-2xl">{icon}</span>
       </div>
       <div className="flex-1">
         <div className="flex items-center justify-between mb-2">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{title}</h3>
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">
+            {title}
+          </h3>
           {screenshots && (
             <button
               onClick={onToggle}
               className="flex items-center space-x-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
             >
-              <span className="text-sm font-medium">Screenshots</span>
+              <span className="text-xs sm:text-sm font-medium">Screenshots</span>
               {isExpanded ? (
                 <HiChevronDown className="w-4 h-4" />
               ) : (

@@ -187,7 +187,7 @@ export default function Home() {
         </div>
 
         <div className="text-xl mb-4 text-gray-900 dark:text-gray-100">
-          I am always looking for exciting new opportunities. Feel free to{' '}
+          I am always looking for new opportunities. Feel free to{' '}
           <StyledLink href="/contact">contact me</StyledLink> or check out my{' '}
           <StyledLink href="/resume">resume</StyledLink>.
         </div>
