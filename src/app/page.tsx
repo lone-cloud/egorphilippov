@@ -48,6 +48,30 @@ export default function Home() {
 
   const projects = [
     {
+      id: 'friendly-kobold',
+      icon: '🤖',
+      iconBgColor: 'bg-purple-100 dark:bg-purple-900/30',
+      title: 'Friendly Kobold - KoboldCPP Manager',
+      description: (
+        <>
+          Actively building an open-source desktop application that provides a user-friendly GUI for
+          managing KoboldCPP, the popular local LLM inference engine. Features automated downloads,
+          version management, GPU detection, and streamlined configuration for running large
+          language models locally.{' '}
+          <StyledLink href="https://github.com/lone-cloud/friendly-kobold" external>
+            Check out the repository
+          </StyledLink>{' '}
+          to see the latest progress and contribute to the project.
+        </>
+      ),
+      tags: [
+        { label: 'LLM Tools', color: 'purple' as const },
+        { label: 'Electron', color: 'purple' as const },
+        { label: 'TypeScript', color: 'purple' as const },
+        { label: 'Active Development', color: 'purple' as const },
+      ],
+    },
+    {
       id: 'huegasm',
       icon: '💡',
       iconBgColor: 'bg-yellow-100 dark:bg-yellow-900/30',
@@ -125,7 +149,7 @@ export default function Home() {
     {
       id: 'next-deploy',
       icon: '⚡',
-      iconBgColor: 'bg-purple-100 dark:bg-purple-900/30',
+      iconBgColor: 'bg-blue-100 dark:bg-blue-900/30',
       title: 'Next Deploy Library',
       description: (
         <>
@@ -138,10 +162,10 @@ export default function Home() {
         </>
       ),
       tags: [
-        { label: 'DevOps', color: 'purple' as const },
-        { label: 'AWS', color: 'purple' as const },
-        { label: 'Serverless', color: 'purple' as const },
-        { label: 'CLI Tool', color: 'purple' as const },
+        { label: 'DevOps', color: 'blue' as const },
+        { label: 'AWS', color: 'blue' as const },
+        { label: 'Serverless', color: 'blue' as const },
+        { label: 'CLI Tool', color: 'blue' as const },
       ],
     },
     {
