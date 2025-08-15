@@ -10,11 +10,11 @@ import {
   TbBrandNodejs,
   TbBrandEmber,
   TbBrandAws,
-  TbBrandDocker,
   TbBrandGit,
   TbBrandTailwind,
   TbBrandReactNative,
 } from 'react-icons/tb';
+import { SiElectron } from 'react-icons/si';
 
 import { Card } from '@/components/Card';
 import { StyledLink } from '@/components/StyledLink';
@@ -39,9 +39,9 @@ export default function Home() {
     { name: 'Ember.js', icon: TbBrandEmber, color: 'text-orange-600' },
     { name: 'Tailwind', icon: TbBrandTailwind, color: 'text-cyan-400' },
     { name: 'React Native', icon: TbBrandReactNative, color: 'text-cyan-400' },
+    { name: 'Electron', icon: SiElectron, color: 'text-blue-500' },
     { name: 'Node.js', icon: TbBrandNodejs, color: 'text-green-600' },
     { name: 'AWS', icon: TbBrandAws, color: 'text-orange-500' },
-    { name: 'Docker', icon: TbBrandDocker, color: 'text-blue-600' },
     { name: 'Git', icon: TbBrandGit, color: 'text-red-500' },
     { name: 'AI', icon: HiLightBulb, color: 'text-purple-500' },
   ];
