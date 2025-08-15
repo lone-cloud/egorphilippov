@@ -36,10 +36,10 @@ export default function Home() {
     { name: 'JavaScript', icon: TbBrandJavascript, color: 'text-yellow-500' },
     { name: 'React', icon: TbBrandReact, color: 'text-cyan-500' },
     { name: 'Next.js', icon: TbBrandNextjs, color: 'text-gray-900 dark:text-gray-100' },
-    { name: 'Ember.js', icon: TbBrandEmber, color: 'text-orange-600' },
     { name: 'Tailwind', icon: TbBrandTailwind, color: 'text-cyan-400' },
-    { name: 'React Native', icon: TbBrandReactNative, color: 'text-cyan-400' },
     { name: 'Electron', icon: SiElectron, color: 'text-blue-500' },
+    { name: 'React Native', icon: TbBrandReactNative, color: 'text-cyan-400' },
+    { name: 'Ember.js', icon: TbBrandEmber, color: 'text-orange-600' },
     { name: 'Node.js', icon: TbBrandNodejs, color: 'text-green-600' },
     { name: 'AWS', icon: TbBrandAws, color: 'text-orange-500' },
     { name: 'Git', icon: TbBrandGit, color: 'text-red-500' },
@@ -207,7 +207,8 @@ export default function Home() {
           on all parts of an application, be it on the server, browser or mobile. While well versed
           in a wide array of technologies, I’m currently the most comfortable with:{' '}
           <HighlightedWord>TypeScript</HighlightedWord>, <HighlightedWord>React</HighlightedWord>,{' '}
-          <HighlightedWord>Node.js</HighlightedWord> and <HighlightedWord>Next.js</HighlightedWord>.
+          <HighlightedWord>Node.js</HighlightedWord>, <HighlightedWord>Electron</HighlightedWord>{' '}
+          and <HighlightedWord>Next.js</HighlightedWord>.
         </div>
 
         <div className="text-xl mb-4 text-gray-900 dark:text-gray-100">
