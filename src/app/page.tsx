@@ -48,17 +48,17 @@ export default function Home() {
 
   const projects = [
     {
-      id: 'friendly-kobold',
+      id: 'gerbil',
       icon: '🤖',
       iconBgColor: 'bg-purple-100 dark:bg-purple-900/30',
-      title: 'Friendly Kobold - KoboldCPP Manager',
+      title: 'Gerbil - Local LLM Manager',
       description: (
         <>
           Actively building an open-source desktop application that provides a user-friendly GUI for
-          managing KoboldCPP, the popular local LLM inference engine. Features automated downloads,
+          running LLMs locally through KoboldCpp (llama.cpp fork). Features automated downloads,
           version management, GPU detection, and streamlined configuration for running large
           language models locally.{' '}
-          <StyledLink href="https://github.com/lone-cloud/friendly-kobold" external>
+          <StyledLink href="https://github.com/lone-cloud/gerbil" external>
             Check out the repository
           </StyledLink>{' '}
           to see the latest progress and contribute to the project.
